@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Neon Admin Panel" />
+	<meta name="author" content="" />
+
+	<title>查询持有股票</title>
+
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-icons/entypo/css/entypo.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/neon-core.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/neon-theme.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/neon-forms.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom.css">
+
+	<script src="<?php echo base_url();?>assets/js/jquery-1.11.0.min.js"></script>
+	<script>$.noConflict();</script>
+    
+    <style>
+        h2{color:#303641;margin-left: 30px;}
+        body{font-family:微软雅黑;font-size:16px;color:#303641;}
+    </style>
+
+	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+</head>
+<body class="page-body" data-url="http://neon.dev">
+<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+	
+	<div class="sidebar-menu">
+
+		<div class="sidebar-menu-inner">
+			
+			<header class="logo-env">
+
+				<!-- logo -->
+				<!--div class="logo">
+					<a href="index.html">
+						<img src="<?php echo base_url();?>assets/images/logo@2x.png" width="120" alt="" />
+					</a>
+				</div>
+
+				<!-- logo collapse icon -->
+				<div class="sidebar-collapse">
+					<a href="#" class="sidebar-collapse-icon"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
+
+								
+				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+				<div class="sidebar-mobile-menu visible-xs">
+					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
+
+			</header>
+			
+									
+			<ul id="main-menu" class="main-menu">
+				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+				<li>
+					<a href="set_info">
+						<i class="entypo-user"></i>
+						<span class="title">账号设置</span>
+					</a>
+				</li>
+				<li>
+					<a href="query_stock">
+						<i class="entypo-chart-bar"></i>
+						<span class="title">查询股票信息</span>
+					</a>
+				</li>
+                <li>
+					<a href="query_money">
+						<i class="entypo-credit-card"></i>
+						<span class="title">查询持有资金</span>
+					</a>
+				</li>
+                <li>
+					<a href="query_own_stock">
+						<i class="entypo-search"></i>
+						<span class="title">查询持有股票</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="entypo-inbox"></i>
+						<span class="title">买卖股票</span>
+					</a>
+					<ul>
+						<li>
+							<a href="buy">
+                                <i class="entypo-ticket"></i>
+								<span class="title">购买股票</span>
+							</a>
+						</li>
+						<li>
+							<a href="sell">
+                                <i class="entypo-key"></i>
+								<span class="title">出售股票</span>
+							</a>
+						</li>
+						<li>
+							<a href="query_instruction">
+                                <i class="entypo-list"></i>
+								<span class="title">查询买卖记录</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<a href="login">
+						<i class="entypo-logout"></i>
+						<span class="title">退出</span>
+					</a>
+				</li>
+			</ul>
+			
+		</div>
+
+	</div>
+
+	<div class="main-content">
+        <div class="col-md-6 col-sm-4 clearfix hidden-xs">
+				<ul class="user-info pull-left pull-none-xsm">
+		
+					<!-- Profile Info -->
+					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
+		
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<!--img src="<?php echo base_url(); ?>assets/images/thumb-1@2x.png" alt="" class="img-circle" width="44" /-->
+							用户：<?php echo $_SESSION['username']; ?>
+						</a>
+                        		
+						<ul class="dropdown-menu">
+		
+							<!-- Reverse Caret -->
+							<li class="caret"></li>
+		
+							<!-- Profile sub-links -->
+							<li>
+								<a href="index">
+									<i class="entypo-home"></i>
+									用户首页
+								</a>
+							</li>		
+							<li>
+								<a href="set_info">
+									<i class="entypo-user"></i>
+									账号设置
+								</a>
+							</li>                            
+                            <li>
+								<a href="query_stock">
+									<i class="entypo-user"></i>
+									查询信息
+								</a>
+							</li>
+                            <li>
+								<a href="buy">
+									<i class="entypo-user"></i>
+									买卖股票
+								</a>
+							</li>
+		
+						</ul><ul class="dropdown-menu">
+		
+							<!-- Reverse Caret -->
+							<li class="caret"></li>
+		
+							<!-- Profile sub-links -->
+							<li>
+								<a href="index">
+									<i class="entypo-home"></i>
+									用户首页
+								</a>
+							</li>		
+							<li>
+								<a href="set_info">
+									<i class="entypo-user"></i>
+									账号设置
+								</a>
+							</li>                            
+                            <li>
+								<a href="query_stock">
+									<i class="entypo-search"></i>
+									查询信息
+								</a>
+							</li>
+                            <li>
+								<a href="buy">
+									<i class="entypo-inbox"></i>
+									买卖股票
+								</a>
+							</li>
+		
+						</ul>
+					</li>
+                    
+          </div>
+		<br />
+		<br />
+        <hr />
+        <ol class="breadcrumb bc-3" >
+            <li>
+                <a href="index"><i class="fa-home"></i>主页</a>
+            </li>
+            <li class="active">
+                <strong>查询持有股票</strong>
+            </li>
+        </ol>
+        <h2>查询持有股票</h2>
+        </br>
+        
+
+        <table class="table table-bordered datatable" id="table-1">
+			<thead>
+				<tr>
+                    <th>股票代码</th>
+					<th>持有股数</th>
+					<th>股票现价</th>
+					<th>持有成本</th>
+                    <th>持有损益</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach ($own_stock as $own_stock_item):?>
+                <tr class="odd gradeX">                    
+					<td class="center"><?php echo $own_stock_item['stock'];?></td>
+					<td class="center"><?php echo $own_stock_item['quantity'];?></td>
+					<td class="center"><?php echo $own_stock_item['price'];?></td>
+					<td class="center"><?php echo $own_stock_item['cost'];?></td>
+                    <td class="center"><?php echo $own_stock_item['balance'];?></td>                    
+				</tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+		<!-- lets do some work here... -->
+		<!-- Footer -->
+		<!--footer class="main">
+			
+			&copy; 2014 <strong>Neon</strong> Admin Theme by <a href="http://laborator.co" target="_blank">Laborator</a>
+		
+		</footer-->
+	</div>
+
+	
+	
+</div>
+
+
+
+
+	<!-- Bottom scripts (common) -->
+	<script src="<?php echo base_url();?>assets/js/gsap/main-gsap.js"></script>
+	<script src="<?php echo base_url();?>assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
+	<script src="<?php echo base_url();?>assets/js/joinable.js"></script>
+	<script src="<?php echo base_url();?>assets/js/resizeable.js"></script>
+	<script src="<?php echo base_url();?>assets/js/neon-api.js"></script>
+
+
+	<!-- JavaScripts initializations and stuff -->
+	<script src="<?php echo base_url();?>assets/js/neon-custom.js"></script>
+
+
+	<!-- Demo Settings -->
+	<script src="<?php echo base_url();?>assets/js/neon-demo.js"></script>
+
+</body>
+</html>

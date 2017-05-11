@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Neon Admin Panel" />
+	<meta name="author" content="" />
+
+	<title>绑定资金账户</title>
+
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-icons/entypo/css/entypo.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/neon-core.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/neon-theme.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/neon-forms.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom.css">
+
+	<script src="<?php echo base_url();?>assets/js/jquery-1.11.0.min.js"></script>
+	<script>$.noConflict();</script>
+
+	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <style type = "text/css">
+        a{color:#21A9E1;}
+        a:hover {color:#0079AB}
+        h2{color:#303641;margin-left: 30px;}
+        body{font-family:微软雅黑;font-size:16px;color:#303641;}
+        form {margin-left: -200px;}
+    </style>
+
+
+</head>
+<body class="page-body" data-url="http://neon.dev">
+
+<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+	
+	<div class="sidebar-menu">
+
+		<div class="sidebar-menu-inner">
+			
+			<header class="logo-env">
+
+				<!-- logo -->
+				<!--div class="logo">
+					<a href="index.html">
+						<img src="<?php echo base_url();?>assets/images/logo@2x.png" width="120" alt="" />
+					</a>
+				</div-->
+
+				<!-- logo collapse icon -->
+				<div class="sidebar-collapse">
+					<a href="#" class="sidebar-collapse-icon"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
+
+								
+				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+				<div class="sidebar-mobile-menu visible-xs">
+					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
+
+			</header>
+			
+									
+			<ul id="main-menu" class="main-menu">
+				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+				<li>
+					<a href="#">
+						<i class="entypo-user"></i>
+						<span class="title">账号设置</span>
+					</a>
+				</li>
+				<li>
+					<a href="query_stock">
+						<i class="entypo-chart-bar"></i>
+						<span class="title">查询股票信息</span>
+					</a>
+				</li>
+                <li>
+					<a href="query_money">
+						<i class="entypo-credit-card"></i>
+						<span class="title">查询持有资金</span>
+					</a>
+				</li>
+                <li>
+					<a href="query_own_stock">
+						<i class="entypo-search"></i>
+						<span class="title">查询持有股票</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="entypo-inbox"></i>
+						<span class="title">买卖股票</span>
+					</a>
+					<ul>
+						<li>
+							<a href="buy">
+                                <i class="entypo-ticket"></i>
+								<span class="title">购买股票</span>
+							</a>
+						</li>
+						<li>
+							<a href="sell">
+                                <i class="entypo-key"></i>
+								<span class="title">出售股票</span>
+							</a>
+						</li>
+						<li>
+							<a href="query_instruction">
+                                <i class="entypo-list"></i>
+								<span class="title">查询买卖记录</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<a href="login" target="_blank">
+						<i class="entypo-logout"></i>
+						<span class="title">退出</span>
+					</a>
+				</li>
+			</ul>
+			
+		</div>
+
+	</div>
+
+	<div class="main-content">
+        <div class="col-md-6 col-sm-4 clearfix hidden-xs">
+				<ul class="user-info pull-left pull-none-xsm">
+		
+					<!-- Profile Info -->
+					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
+		
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<!--img src="<?php echo base_url(); ?>assets/images/thumb-1@2x.png" alt="" class="img-circle" width="44" /-->
+							用户：<?php echo $_SESSION['username']; ?>
+						</a>
+                        		
+						<ul class="dropdown-menu">
+		
+							<!-- Reverse Caret -->
+							<li class="caret"></li>
+		
+							<!-- Profile sub-links -->
+							<li>
+								<a href="index">
+									<i class="entypo-home"></i>
+									用户首页
+								</a>
+							</li>		
+							<li>
+								<a href="set_info">
+									<i class="entypo-user"></i>
+									账号设置
+								</a>
+							</li>                            
+                            <li>
+								<a href="query_stock">
+									<i class="entypo-search"></i>
+									查询信息
+								</a>
+							</li>
+                            <li>
+								<a href="buy">
+									<i class="entypo-inbox"></i>
+									买卖股票
+								</a>
+							</li>
+		
+						</ul>
+					</li>
+                    
+          </div>
+		<br />
+		<br />
+        <hr />
+        <ol class="breadcrumb bc-3" >
+            <li>
+                <a href="index"><i class="fa-home"></i>主页</a>
+            </li>
+            <li class="active">
+                <strong>账号设置</strong>
+            </li>
+        </ol>
+        <h2>绑定资金账户</h2>
+        <div class="panel-body" style = "margin-left:30px;">	
+            <div class="row">
+                <div class="middle-align">当前尚未绑定任何资金账户
+                    <a href="bind_fund">[绑定]</a>
+                </div>
+            </div>
+            </br>
+            <div class="row">
+                <div class="middle-align">当前绑定的资金账户：
+                    <a href="bind_fund">[修改]</a>
+                    <a href="unbind_fund" onclick="">[解绑]</a>
+                </div>
+            </div>
+         </div>
+        <hr />
+        <h2>修改密码</h2>
+         <div class="panel-body">						
+            <form method="post" id="form_password role="form" class="form-horizontal form-groups">
+                <div class="form-group">
+                    <label for="password_old" class="col-sm-3 control-label">原密码</label>
+                    
+                    <div class="col-sm-5">
+                        <input type="password" class="form-control" id="password_old" name="password_old"  placeholder="请输入原来的密码">
+                    </div>
+                    <div style = "color:red"><?php echo form_error('password_old'); ?></div>
+                </div>
+                
+               <div class="form-group">
+                    <label for="password_new" class="col-sm-3 control-label">新密码</label>
+                    
+                    <div class="col-sm-5">
+                        <input type="password" class="form-control" id="password_new" name="password_new"  placeholder="请输入新密码">
+                    </div>
+                    <div style = "color:red"><?php echo form_error('password_new'); ?></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password_confirm" class="col-sm-3 control-label">确认新密码</label>
+                    
+                    <div class="col-sm-5">
+                        <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="请再次输入新密码">
+                    </div>
+                    <div style = "color:red"><?php echo form_error('password_confirm'); ?></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-5">
+                        <button type="submit" class="btn btn-info">修改密码</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+
+        
+		<!-- lets do some work here... -->
+		<!-- Footer -->
+		<!--footer class="main">
+			
+			&copy; 2014 <strong>Neon</strong> Admin Theme by <a href="http://laborator.co" target="_blank">Laborator</a>
+		
+		</footer-->
+	</div>
+
+	
+	
+</div>
+
+    <!-- Modal 6 (Long Modal)-->
+	<div class="modal fade" id="modal-6">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">绑定资金账户</h4>
+				</div>
+                
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                
+                                <div class="form-group">
+                                    <label for="field-1" class="control-label">资金账户</label>
+                                    
+                                    <input type="text" class="form-control" id="field-1" placeholder="账户名">
+                                </div>	
+                                
+                            </div>
+                        </div>
+                    
+                    
+                        <div class="row">
+                            <div class="col-md-12">
+                                
+                                <div class="form-group">
+                                    <label for="field-2" class="control-label">密码</label>
+                                    
+                                    <input type="text" class="form-control" id="field-2" placeholder="登录密码">
+                                </div>	
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+				
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-info">确认修改</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Bottom scripts (common) -->
+	<script src="<?php echo base_url();?>assets/js/gsap/main-gsap.js"></script>
+	<script src="<?php echo base_url();?>assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
+	<script src="<?php echo base_url();?>assets/js/joinable.js"></script>
+	<script src="<?php echo base_url();?>assets/js/resizeable.js"></script>
+	<script src="<?php echo base_url();?>assets/js/neon-api.js"></script>
+
+
+	<!-- JavaScripts initializations and stuff -->
+	<script src="<?php echo base_url();?>assets/js/neon-custom.js"></script>
+
+
+	<!-- Demo Settings -->
+	<script src="<?php echo base_url();?>assets/js/neon-demo.js"></script>
+
+</body>
+</html>
