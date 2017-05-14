@@ -25,7 +25,7 @@ class User_model extends CI_Model
      */
     public function validate($username, $password)
     {
-        $sql = "SELECT * FROM user WHERE username=?";
+        $sql = "SELECT * FROM LoginUser WHERE user=?";
 
         $query = $this->db->query($sql, array($username));
         $row = $query->row();
@@ -44,15 +44,15 @@ class User_model extends CI_Model
     /**
      * @param $username
      * @param $password
-     * @param $email
+     * @param $email 暂时未加
      * @return mixed
      * 用户注册
      */
-    public function create($username, $password, $email)
+    public function userRegister($username, $password)
     {
-        $sql = "INSERT INTO user(username, password, email) VALUES(?, ?, ?)";
+        $sql = "INSERT INTO LoginUser(user,password) VALUES(?, ?)";
         $password_crypted = crypt($password, $this->salt);
-        $query = $this->db->query($sql, array($username, $password_crypted, $email));
+        $query = $this->db->query($sql, array($username, $password_crypted));
         return $query;
     }
 
@@ -67,5 +67,21 @@ class User_model extends CI_Model
             $salt = $this->salt;
         }
         return crypt($str, $salt);
+    }
+
+    /**
+     * @param $name
+     * @return 已存在 true；未存在 false
+     * 用户名是否存在
+     */
+    function existUserName($name){
+        $sql = "SELECT * FROM LoginUser WHERE user = '" . $name ."'" ;
+        $query = $this->db->query($sql);
+
+        if($query->num_rows() > 0)
+            {
+                return true;
+            }
+        return false;
     }
 }

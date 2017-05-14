@@ -7,14 +7,14 @@ class User extends CI_Controller
         parent::__construct();
         $this->load->helper(array('form', 'url', 'cookie'));
         $this->load->library(array('form_validation','session'));
-        //$this->load->model("user_model");
+        $this->load->model("user_model");
     }
 
     public function index()
     {
         $this->load->view("neon/home-page.html");
     }
-    
+
     //登录界面
     public function login()
     {
@@ -25,7 +25,7 @@ class User extends CI_Controller
             array('required' => '{field}不能为空'));
         $login_status = 'unknown';
         $data['login_status'] = $login_status;
-        
+
         //如果用户名或密码不合法
         if ($this->form_validation->run() == FALSE)
         {
@@ -34,14 +34,17 @@ class User extends CI_Controller
         //用户名和密码均合法
         else
         {
+            //得到用户输入的用户名
+            $username  = $this->input->post("username");
             //利用用户名及密码检查用户是否存在：数据库操作
-            //......
-            $login_status = 'success';
+            if ($this->user_model->validate($username, $this->input->post("password")))
+            {
+                // 成功登陆
+                $login_status = 'success';
+            }
 
             if ($login_status == 'success') {
                 //$username_crypted = $this->user_model->crypt($username);
-                //得到用户输入的用户名
-                $username  = $this->input->post("username");
                 //设置session key,之后可以通过$_SESSION['username']拿到这时输入的用户名
                 $this->session->set_userdata("username", $username);
                 $this->load->view("neon/home-page.html", $data);
@@ -51,21 +54,21 @@ class User extends CI_Controller
                 $data['login_status'] = $login_status;
                 $this->load->view('neon/extra-login.html',$data);
             }
-            
         }
 
     }
-    
+
     //注册界面
     public function register(){
         //检查输入的用户名及密码的合法性
         //is_unique[user.username]表示在指定数据库的user表中，当前输入的username是唯一的，即这个用户名还没有被其他用户使用
-        $this->form_validation->set_rules('username', '用户名', 'required|callback_username_check|is_unique[loginUser.username]',
-            array('is_unique' => '{field}已存在'));
+        // $this->form_validation->set_rules('username', '用户名', 'required|callback_username_check|is_unique[LoginUser.user]',
+        //     array('is_unique' => '{field}已存在'));
+        $this->form_validation->set_rules('username', '用户名', 'required|callback_username_check|callback_is_unique[LoginUser.user]');
         $this->form_validation->set_rules('password', 'password', 'trim|required|callback_password_check');
         $this->form_validation->set_rules('password2', 'password2', 'required|matches[password]',
             array('required' => '两次输入的密码不一致', 'matches' => '两次输入的密码不一致'));
-        
+
         //如果输入的用户名或密码不合法
         if ($this->form_validation->run() == FALSE)
         {
@@ -75,11 +78,13 @@ class User extends CI_Controller
         else
         {
             //将新的用户信息插入数据库
-            //...
+            $this->user_model->userRegister($this->input->post('username'),$this->input->post('password'));
+
+            //加载到登录界面
             $this->load->view('neon/extra-login.html');
         }
     }
-    
+
     //账户设置页面：修改用户密码
     public function set_info()
     {
@@ -90,10 +95,10 @@ class User extends CI_Controller
             array('required' => '{field}不能为空','max_length' => '密码应为6~20位','min_length' => '密码应为6~20位'));
         $this->form_validation->set_rules('password_confirm', '新密码确认', 'required|matches[password_new]',
             array('required' => '{field}不能为空','matches' => '两次输入的密码不一致'));
-        
+
         if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view('neon/set-info.html');           
+            $this->load->view('neon/set-info.html');
         }
         else
         {
@@ -104,26 +109,26 @@ class User extends CI_Controller
              //从view拿到的新密码的确认
             $password_confirm = $this->input->post("password_confirm");
             //......
-            
+
             //加载成功修改界面
             $this->load->view('neon/change-password-success.html');
         }
-               
+
     }
-    
-    
+
+
     //修改资金账户页面
     public function bind_fund()
     {
-        
+
         $this->form_validation->set_rules('fund_account', '资金账户', 'required',
             array('required' => '{field}不能为空'));
         $this->form_validation->set_rules('fund_password', '密码', 'required',
             array('required' => '{field}不能为空'));
-        
+
         if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view("neon/bind-fund.html");           
+            $this->load->view("neon/bind-fund.html");
         }
         else
         {
@@ -132,11 +137,11 @@ class User extends CI_Controller
             //从view拿到的资金账号密码
             $fund_password = $this->input->post("fund_password");
             //......
-            
+
             //加载成功修改界面
             $this->load->view('neon/change-password-success.html');
         }
-        
+
     }
     //解绑资金账号
     public function unbind_fund()
@@ -146,26 +151,26 @@ class User extends CI_Controller
         //加载成功修改界面
         $this->load->view('neon/change-password-success.html');
     }
-    
+
     //查询股票信息
     public function query_stock()
     {
         //是否加载股票信息
         $data['load_stock'] = false;
-        
+
         //输入的股票代码合法性检查
         $this->form_validation->set_rules('stockid', '股票代码', 'required',
             array('required' => '{field}不能为空'));
-        
+
         if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view("neon/query-stock.html",$data);          
+            $this->load->view("neon/query-stock.html",$data);
         }
         else
         {
              //从view拿到的股票代码
             $stockid = $this->input->post("stockid");
-            
+
             //......
             //查询得到的股票信息
             $stock = array("stockid"=>"123456","change"=>"-1.1","chg"=>"-0.8%","latestPrice"=>"98.7",
@@ -175,10 +180,10 @@ class User extends CI_Controller
             $data['stock'] = $stock;
             $this->load->view('neon/query-stock.html',$data);
         }
-        
-        
+
+
     }
-    
+
     //查询资金情况
     public function query_money()
     {
@@ -190,7 +195,7 @@ class User extends CI_Controller
         $data['fund'] = $fund;
         $this->load->view("neon/query-money.html", $data);
     }
-    
+
     //查询持有股票信息
     public function query_own_stock()
     {
@@ -206,7 +211,7 @@ class User extends CI_Controller
         $data['own_stock'] = $own_stock;
         $this->load->view("neon/query-own-stock.html", $data);
     }
-    
+
     //购买股票
     public function buy()
     {
@@ -214,10 +219,10 @@ class User extends CI_Controller
         $data['recommend_price'] = "101";
         //可购买的最大数量（与资金账户内资金有关）
         $data['maximum_quantity'] = "2";
-        
+
         $this->load->view("neon/buy.html",$data);
     }
-    
+
     //出售股票
     public function sell()
     {
@@ -225,10 +230,10 @@ class User extends CI_Controller
         $data['recommend_price'] = "101";
         //可出售的最大数量（持有股数）
         $data['maximum_quantity'] = "2";
-        
+
         $this->load->view("neon/sell.html", $data);
     }
-    
+
     //查询买卖记录
     public function query_instruction()
     {
@@ -244,8 +249,8 @@ class User extends CI_Controller
         $data['instruction'] = $instruction;
         $this->load->view("neon/query-instruction.html", $data);
     }
-       
-    //检查注册时输入的用户名的合法性   
+
+    //检查注册时输入的用户名的合法性
     public function username_check($str)
     {
         if (strlen($str) < 6 || strlen($str) > 20)
@@ -260,13 +265,24 @@ class User extends CI_Controller
         }
         return TRUE;
     }
-    
+
     //检查注册时输入的密码的合法性
     public function password_check($str)
     {
         if (strlen($str) < 6 || strlen($str) > 20)
         {
             $this->form_validation->set_message('password_check', '密码应该由6~20个字符组成，区分大小写');
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+    //检查用户名是否已存在
+    public function is_unique($str)
+    {
+        if($this->user_model->existUserName($str))
+        {
+            $this->form_validation->set_message('is_unique', '用户名已存在');
             return FALSE;
         }
         return TRUE;
