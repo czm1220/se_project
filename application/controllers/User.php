@@ -19,7 +19,7 @@ class User extends CI_Controller
     public function login()
     {
         //检查输入的用户名及密码的合法性
-        $this->form_validation->set_rules('username', '用户名', 'required',
+        $this->form_validation->set_rules('username', '用户名', 'required|callback_username_exist',
             array('required' => '{field}不能为空'));
         $this->form_validation->set_rules('password', '密码', 'required',
             array('required' => '{field}不能为空'));
@@ -283,6 +283,16 @@ class User extends CI_Controller
         if($this->user_model->existUserName($str))
         {
             $this->form_validation->set_message('is_unique', '用户名已存在');
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+    public function username_exist($str)
+    {
+        if(!$this->user_model->existUserName($str))
+        {
+            $this->form_validation->set_message('username_exist', '用户名不存在');
             return FALSE;
         }
         return TRUE;

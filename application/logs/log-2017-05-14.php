@@ -4178,3 +4178,1287 @@ INFO - 2017-05-14 08:20:44 --> Database Driver Class Initialized
 INFO - 2017-05-14 08:20:44 --> File loaded: D:\wamp\se_project\views\neon/extra-login.html
 INFO - 2017-05-14 08:20:44 --> Final output sent to browser
 DEBUG - 2017-05-14 08:20:44 --> Total execution time: 1.0271
+INFO - 2017-05-14 06:43:38 --> Config Class Initialized
+INFO - 2017-05-14 06:43:38 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:43:38 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:43:38 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:43:38 --> URI Class Initialized
+INFO - 2017-05-14 06:43:38 --> Router Class Initialized
+INFO - 2017-05-14 06:43:38 --> Output Class Initialized
+INFO - 2017-05-14 06:43:38 --> Security Class Initialized
+DEBUG - 2017-05-14 06:43:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:43:38 --> Input Class Initialized
+INFO - 2017-05-14 06:43:38 --> Language Class Initialized
+INFO - 2017-05-14 06:43:38 --> Loader Class Initialized
+INFO - 2017-05-14 06:43:38 --> Controller Class Initialized
+INFO - 2017-05-14 06:43:38 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:43:38 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:43:38 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:43:38 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:43:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:43:38 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:43:38 --> Model Class Initialized
+INFO - 2017-05-14 06:43:38 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:43:38 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 06:43:38 --> Final output sent to browser
+DEBUG - 2017-05-14 06:43:38 --> Total execution time: 0.3387
+INFO - 2017-05-14 06:43:45 --> Config Class Initialized
+INFO - 2017-05-14 06:43:45 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:43:45 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:43:45 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:43:45 --> URI Class Initialized
+INFO - 2017-05-14 06:43:45 --> Router Class Initialized
+INFO - 2017-05-14 06:43:45 --> Output Class Initialized
+INFO - 2017-05-14 06:43:45 --> Security Class Initialized
+DEBUG - 2017-05-14 06:43:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:43:45 --> Input Class Initialized
+INFO - 2017-05-14 06:43:45 --> Language Class Initialized
+INFO - 2017-05-14 06:43:45 --> Loader Class Initialized
+INFO - 2017-05-14 06:43:45 --> Controller Class Initialized
+INFO - 2017-05-14 06:43:45 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:43:45 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:43:45 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:43:45 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:43:45 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:43:45 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:43:45 --> Model Class Initialized
+INFO - 2017-05-14 06:43:45 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:43:46 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-register.html
+INFO - 2017-05-14 06:43:46 --> Final output sent to browser
+DEBUG - 2017-05-14 06:43:46 --> Total execution time: 0.2027
+INFO - 2017-05-14 06:43:54 --> Config Class Initialized
+INFO - 2017-05-14 06:43:54 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:43:54 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:43:54 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:43:54 --> URI Class Initialized
+INFO - 2017-05-14 06:43:54 --> Router Class Initialized
+INFO - 2017-05-14 06:43:54 --> Output Class Initialized
+INFO - 2017-05-14 06:43:54 --> Security Class Initialized
+DEBUG - 2017-05-14 06:43:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:43:54 --> Input Class Initialized
+INFO - 2017-05-14 06:43:54 --> Language Class Initialized
+INFO - 2017-05-14 06:43:54 --> Loader Class Initialized
+INFO - 2017-05-14 06:43:54 --> Controller Class Initialized
+INFO - 2017-05-14 06:43:54 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:43:54 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:43:54 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:43:54 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:43:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:43:54 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:43:54 --> Model Class Initialized
+INFO - 2017-05-14 06:43:54 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:43:54 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 06:43:54 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-register.html
+INFO - 2017-05-14 06:43:54 --> Final output sent to browser
+DEBUG - 2017-05-14 06:43:54 --> Total execution time: 0.3093
+INFO - 2017-05-14 06:43:58 --> Config Class Initialized
+INFO - 2017-05-14 06:43:58 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:43:58 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:43:58 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:43:58 --> URI Class Initialized
+INFO - 2017-05-14 06:43:58 --> Router Class Initialized
+INFO - 2017-05-14 06:43:58 --> Output Class Initialized
+INFO - 2017-05-14 06:43:58 --> Security Class Initialized
+DEBUG - 2017-05-14 06:43:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:43:58 --> Input Class Initialized
+INFO - 2017-05-14 06:43:58 --> Language Class Initialized
+INFO - 2017-05-14 06:43:58 --> Loader Class Initialized
+INFO - 2017-05-14 06:43:58 --> Controller Class Initialized
+INFO - 2017-05-14 06:43:58 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:43:58 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:43:58 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:43:58 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:43:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:43:58 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:43:58 --> Model Class Initialized
+INFO - 2017-05-14 06:43:58 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:43:58 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 06:43:58 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-register.html
+INFO - 2017-05-14 06:43:58 --> Final output sent to browser
+DEBUG - 2017-05-14 06:43:58 --> Total execution time: 0.2339
+INFO - 2017-05-14 06:44:02 --> Config Class Initialized
+INFO - 2017-05-14 06:44:02 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:44:02 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:44:02 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:44:02 --> URI Class Initialized
+INFO - 2017-05-14 06:44:02 --> Router Class Initialized
+INFO - 2017-05-14 06:44:02 --> Output Class Initialized
+INFO - 2017-05-14 06:44:02 --> Security Class Initialized
+DEBUG - 2017-05-14 06:44:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:44:02 --> Input Class Initialized
+INFO - 2017-05-14 06:44:02 --> Language Class Initialized
+INFO - 2017-05-14 06:44:02 --> Loader Class Initialized
+INFO - 2017-05-14 06:44:02 --> Controller Class Initialized
+INFO - 2017-05-14 06:44:02 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:44:02 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:44:02 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:44:02 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:44:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:44:02 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:44:02 --> Model Class Initialized
+INFO - 2017-05-14 06:44:02 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:44:02 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 06:44:02 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-register.html
+INFO - 2017-05-14 06:44:02 --> Final output sent to browser
+DEBUG - 2017-05-14 06:44:02 --> Total execution time: 0.2238
+INFO - 2017-05-14 06:44:05 --> Config Class Initialized
+INFO - 2017-05-14 06:44:05 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:44:05 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:44:05 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:44:05 --> URI Class Initialized
+INFO - 2017-05-14 06:44:05 --> Router Class Initialized
+INFO - 2017-05-14 06:44:05 --> Output Class Initialized
+INFO - 2017-05-14 06:44:05 --> Security Class Initialized
+DEBUG - 2017-05-14 06:44:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:44:05 --> Input Class Initialized
+INFO - 2017-05-14 06:44:05 --> Language Class Initialized
+INFO - 2017-05-14 06:44:05 --> Loader Class Initialized
+INFO - 2017-05-14 06:44:05 --> Controller Class Initialized
+INFO - 2017-05-14 06:44:05 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:44:05 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:44:05 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:44:05 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:44:05 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:44:05 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:44:05 --> Model Class Initialized
+INFO - 2017-05-14 06:44:05 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:44:05 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 06:44:05 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-register.html
+INFO - 2017-05-14 06:44:05 --> Final output sent to browser
+DEBUG - 2017-05-14 06:44:05 --> Total execution time: 0.2373
+INFO - 2017-05-14 06:44:10 --> Config Class Initialized
+INFO - 2017-05-14 06:44:10 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:44:10 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:44:10 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:44:10 --> URI Class Initialized
+INFO - 2017-05-14 06:44:10 --> Router Class Initialized
+INFO - 2017-05-14 06:44:10 --> Output Class Initialized
+INFO - 2017-05-14 06:44:10 --> Security Class Initialized
+DEBUG - 2017-05-14 06:44:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:44:10 --> Input Class Initialized
+INFO - 2017-05-14 06:44:10 --> Language Class Initialized
+INFO - 2017-05-14 06:44:10 --> Loader Class Initialized
+INFO - 2017-05-14 06:44:10 --> Controller Class Initialized
+INFO - 2017-05-14 06:44:10 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:44:10 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:44:10 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:44:10 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:44:10 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:44:10 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:44:10 --> Model Class Initialized
+INFO - 2017-05-14 06:44:10 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:44:10 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 06:44:10 --> File loaded: F:\workplace\SE\se_project\views\neon/home-page.html
+INFO - 2017-05-14 06:44:10 --> Final output sent to browser
+DEBUG - 2017-05-14 06:44:10 --> Total execution time: 0.3311
+INFO - 2017-05-14 06:51:12 --> Config Class Initialized
+INFO - 2017-05-14 06:51:12 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:51:12 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:51:12 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:51:12 --> URI Class Initialized
+INFO - 2017-05-14 06:51:12 --> Router Class Initialized
+INFO - 2017-05-14 06:51:12 --> Output Class Initialized
+INFO - 2017-05-14 06:51:12 --> Security Class Initialized
+DEBUG - 2017-05-14 06:51:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:51:12 --> Input Class Initialized
+INFO - 2017-05-14 06:51:12 --> Language Class Initialized
+INFO - 2017-05-14 06:51:12 --> Loader Class Initialized
+INFO - 2017-05-14 06:51:12 --> Controller Class Initialized
+INFO - 2017-05-14 06:51:12 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:51:12 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:51:12 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:51:12 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:51:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:51:12 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:51:12 --> Model Class Initialized
+INFO - 2017-05-14 06:51:12 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:51:12 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-register.html
+INFO - 2017-05-14 06:51:12 --> Final output sent to browser
+DEBUG - 2017-05-14 06:51:12 --> Total execution time: 0.2269
+INFO - 2017-05-14 06:51:21 --> Config Class Initialized
+INFO - 2017-05-14 06:51:21 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:51:21 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:51:21 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:51:21 --> URI Class Initialized
+INFO - 2017-05-14 06:51:21 --> Router Class Initialized
+INFO - 2017-05-14 06:51:21 --> Output Class Initialized
+INFO - 2017-05-14 06:51:21 --> Security Class Initialized
+DEBUG - 2017-05-14 06:51:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:51:21 --> Input Class Initialized
+INFO - 2017-05-14 06:51:21 --> Language Class Initialized
+INFO - 2017-05-14 06:51:21 --> Loader Class Initialized
+INFO - 2017-05-14 06:51:21 --> Controller Class Initialized
+INFO - 2017-05-14 06:51:21 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:51:21 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:51:21 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:51:21 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:51:21 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:51:21 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:51:21 --> Model Class Initialized
+INFO - 2017-05-14 06:51:21 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:51:21 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 06:51:21 --> File loaded: F:\workplace\SE\se_project\views\neon/home-page.html
+INFO - 2017-05-14 06:51:21 --> Final output sent to browser
+DEBUG - 2017-05-14 06:51:21 --> Total execution time: 0.3200
+INFO - 2017-05-14 06:51:29 --> Config Class Initialized
+INFO - 2017-05-14 06:51:29 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:51:29 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:51:29 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:51:29 --> URI Class Initialized
+INFO - 2017-05-14 06:51:29 --> Router Class Initialized
+INFO - 2017-05-14 06:51:29 --> Output Class Initialized
+INFO - 2017-05-14 06:51:29 --> Security Class Initialized
+DEBUG - 2017-05-14 06:51:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:51:29 --> Input Class Initialized
+INFO - 2017-05-14 06:51:29 --> Language Class Initialized
+INFO - 2017-05-14 06:51:29 --> Loader Class Initialized
+INFO - 2017-05-14 06:51:29 --> Controller Class Initialized
+INFO - 2017-05-14 06:51:29 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:51:29 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:51:29 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:51:29 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:51:29 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:51:29 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:51:29 --> Model Class Initialized
+INFO - 2017-05-14 06:51:29 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:51:29 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 06:51:29 --> Final output sent to browser
+DEBUG - 2017-05-14 06:51:29 --> Total execution time: 0.1886
+INFO - 2017-05-14 06:51:34 --> Config Class Initialized
+INFO - 2017-05-14 06:51:34 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:51:34 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:51:34 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:51:34 --> URI Class Initialized
+INFO - 2017-05-14 06:51:34 --> Router Class Initialized
+INFO - 2017-05-14 06:51:34 --> Output Class Initialized
+INFO - 2017-05-14 06:51:34 --> Security Class Initialized
+DEBUG - 2017-05-14 06:51:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:51:34 --> Input Class Initialized
+INFO - 2017-05-14 06:51:34 --> Language Class Initialized
+INFO - 2017-05-14 06:51:34 --> Loader Class Initialized
+INFO - 2017-05-14 06:51:34 --> Controller Class Initialized
+INFO - 2017-05-14 06:51:34 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:51:34 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:51:34 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:51:34 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:51:34 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:51:34 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:51:34 --> Model Class Initialized
+INFO - 2017-05-14 06:51:34 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:51:35 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 06:51:35 --> File loaded: F:\workplace\SE\se_project\views\neon/home-page.html
+INFO - 2017-05-14 06:51:35 --> Final output sent to browser
+DEBUG - 2017-05-14 06:51:35 --> Total execution time: 0.2263
+INFO - 2017-05-14 06:51:38 --> Config Class Initialized
+INFO - 2017-05-14 06:51:38 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:51:38 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:51:38 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:51:38 --> URI Class Initialized
+INFO - 2017-05-14 06:51:38 --> Router Class Initialized
+INFO - 2017-05-14 06:51:38 --> Output Class Initialized
+INFO - 2017-05-14 06:51:38 --> Security Class Initialized
+DEBUG - 2017-05-14 06:51:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:51:38 --> Input Class Initialized
+INFO - 2017-05-14 06:51:38 --> Language Class Initialized
+INFO - 2017-05-14 06:51:38 --> Loader Class Initialized
+INFO - 2017-05-14 06:51:38 --> Controller Class Initialized
+INFO - 2017-05-14 06:51:38 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:51:38 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:51:38 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:51:38 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:51:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:51:38 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:51:38 --> Model Class Initialized
+INFO - 2017-05-14 06:51:38 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:51:38 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 06:51:38 --> Final output sent to browser
+DEBUG - 2017-05-14 06:51:38 --> Total execution time: 0.2069
+INFO - 2017-05-14 06:51:43 --> Config Class Initialized
+INFO - 2017-05-14 06:51:43 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:51:43 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:51:43 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:51:43 --> URI Class Initialized
+INFO - 2017-05-14 06:51:43 --> Router Class Initialized
+INFO - 2017-05-14 06:51:43 --> Output Class Initialized
+INFO - 2017-05-14 06:51:43 --> Security Class Initialized
+DEBUG - 2017-05-14 06:51:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:51:43 --> Input Class Initialized
+INFO - 2017-05-14 06:51:43 --> Language Class Initialized
+INFO - 2017-05-14 06:51:43 --> Loader Class Initialized
+INFO - 2017-05-14 06:51:43 --> Controller Class Initialized
+INFO - 2017-05-14 06:51:43 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:51:43 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:51:43 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:51:43 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:51:43 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:51:43 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:51:43 --> Model Class Initialized
+INFO - 2017-05-14 06:51:43 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:51:43 --> Language file loaded: language/english/form_validation_lang.php
+ERROR - 2017-05-14 06:51:43 --> Severity: Notice --> Trying to get property of non-object F:\workplace\SE\se_project\application\models\User_model.php 37
+INFO - 2017-05-14 06:51:43 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 06:51:43 --> Final output sent to browser
+DEBUG - 2017-05-14 06:51:43 --> Total execution time: 0.3054
+INFO - 2017-05-14 06:54:46 --> Config Class Initialized
+INFO - 2017-05-14 06:54:46 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:54:46 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:54:46 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:54:46 --> URI Class Initialized
+INFO - 2017-05-14 06:54:46 --> Router Class Initialized
+INFO - 2017-05-14 06:54:46 --> Output Class Initialized
+INFO - 2017-05-14 06:54:46 --> Security Class Initialized
+DEBUG - 2017-05-14 06:54:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:54:46 --> Input Class Initialized
+INFO - 2017-05-14 06:54:46 --> Language Class Initialized
+ERROR - 2017-05-14 06:54:46 --> Severity: Parsing Error --> syntax error, unexpected ';' F:\workplace\SE\se_project\application\controllers\User.php 40
+INFO - 2017-05-14 06:54:50 --> Config Class Initialized
+INFO - 2017-05-14 06:54:50 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:54:50 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:54:50 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:54:50 --> URI Class Initialized
+INFO - 2017-05-14 06:54:50 --> Router Class Initialized
+INFO - 2017-05-14 06:54:50 --> Output Class Initialized
+INFO - 2017-05-14 06:54:50 --> Security Class Initialized
+DEBUG - 2017-05-14 06:54:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:54:50 --> Input Class Initialized
+INFO - 2017-05-14 06:54:50 --> Language Class Initialized
+ERROR - 2017-05-14 06:54:50 --> Severity: Parsing Error --> syntax error, unexpected ';' F:\workplace\SE\se_project\application\controllers\User.php 40
+INFO - 2017-05-14 06:54:55 --> Config Class Initialized
+INFO - 2017-05-14 06:54:55 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:54:55 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:54:55 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:54:55 --> URI Class Initialized
+INFO - 2017-05-14 06:54:55 --> Router Class Initialized
+INFO - 2017-05-14 06:54:55 --> Output Class Initialized
+INFO - 2017-05-14 06:54:55 --> Security Class Initialized
+DEBUG - 2017-05-14 06:54:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:54:55 --> Input Class Initialized
+INFO - 2017-05-14 06:54:55 --> Language Class Initialized
+ERROR - 2017-05-14 06:54:55 --> Severity: Parsing Error --> syntax error, unexpected ';' F:\workplace\SE\se_project\application\controllers\User.php 40
+INFO - 2017-05-14 06:54:57 --> Config Class Initialized
+INFO - 2017-05-14 06:54:57 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:54:57 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:54:57 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:54:57 --> URI Class Initialized
+INFO - 2017-05-14 06:54:57 --> Router Class Initialized
+INFO - 2017-05-14 06:54:57 --> Output Class Initialized
+INFO - 2017-05-14 06:54:57 --> Security Class Initialized
+DEBUG - 2017-05-14 06:54:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:54:57 --> Input Class Initialized
+INFO - 2017-05-14 06:54:57 --> Language Class Initialized
+ERROR - 2017-05-14 06:54:57 --> Severity: Parsing Error --> syntax error, unexpected ';' F:\workplace\SE\se_project\application\controllers\User.php 40
+INFO - 2017-05-14 06:59:53 --> Config Class Initialized
+INFO - 2017-05-14 06:59:53 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:59:53 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:59:53 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:59:53 --> URI Class Initialized
+INFO - 2017-05-14 06:59:53 --> Router Class Initialized
+INFO - 2017-05-14 06:59:53 --> Output Class Initialized
+INFO - 2017-05-14 06:59:53 --> Security Class Initialized
+DEBUG - 2017-05-14 06:59:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:59:53 --> Input Class Initialized
+INFO - 2017-05-14 06:59:53 --> Language Class Initialized
+INFO - 2017-05-14 06:59:53 --> Loader Class Initialized
+INFO - 2017-05-14 06:59:53 --> Controller Class Initialized
+INFO - 2017-05-14 06:59:53 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:59:53 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:59:53 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:59:53 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:59:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:59:53 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:59:53 --> Model Class Initialized
+INFO - 2017-05-14 06:59:53 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:59:53 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 06:59:53 --> Final output sent to browser
+DEBUG - 2017-05-14 06:59:53 --> Total execution time: 0.2400
+INFO - 2017-05-14 06:59:57 --> Config Class Initialized
+INFO - 2017-05-14 06:59:57 --> Hooks Class Initialized
+DEBUG - 2017-05-14 06:59:57 --> UTF-8 Support Enabled
+INFO - 2017-05-14 06:59:57 --> Utf8 Class Initialized
+INFO - 2017-05-14 06:59:57 --> URI Class Initialized
+INFO - 2017-05-14 06:59:57 --> Router Class Initialized
+INFO - 2017-05-14 06:59:57 --> Output Class Initialized
+INFO - 2017-05-14 06:59:57 --> Security Class Initialized
+DEBUG - 2017-05-14 06:59:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 06:59:57 --> Input Class Initialized
+INFO - 2017-05-14 06:59:57 --> Language Class Initialized
+INFO - 2017-05-14 06:59:57 --> Loader Class Initialized
+INFO - 2017-05-14 06:59:57 --> Controller Class Initialized
+INFO - 2017-05-14 06:59:57 --> Helper loaded: form_helper
+INFO - 2017-05-14 06:59:57 --> Helper loaded: url_helper
+INFO - 2017-05-14 06:59:57 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 06:59:57 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 06:59:57 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 06:59:57 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 06:59:57 --> Model Class Initialized
+INFO - 2017-05-14 06:59:57 --> Database Driver Class Initialized
+INFO - 2017-05-14 06:59:57 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 06:59:57 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 06:59:57 --> Final output sent to browser
+DEBUG - 2017-05-14 06:59:57 --> Total execution time: 0.2730
+INFO - 2017-05-14 07:00:15 --> Config Class Initialized
+INFO - 2017-05-14 07:00:15 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:00:15 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:00:15 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:00:15 --> URI Class Initialized
+INFO - 2017-05-14 07:00:15 --> Router Class Initialized
+INFO - 2017-05-14 07:00:15 --> Output Class Initialized
+INFO - 2017-05-14 07:00:15 --> Security Class Initialized
+DEBUG - 2017-05-14 07:00:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:00:15 --> Input Class Initialized
+INFO - 2017-05-14 07:00:15 --> Language Class Initialized
+INFO - 2017-05-14 07:00:15 --> Loader Class Initialized
+INFO - 2017-05-14 07:00:15 --> Controller Class Initialized
+INFO - 2017-05-14 07:00:15 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:00:15 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:00:15 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:00:15 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:00:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:00:15 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:00:15 --> Model Class Initialized
+INFO - 2017-05-14 07:00:15 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:00:16 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:00:16 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:00:16 --> Final output sent to browser
+DEBUG - 2017-05-14 07:00:16 --> Total execution time: 0.3207
+INFO - 2017-05-14 07:00:34 --> Config Class Initialized
+INFO - 2017-05-14 07:00:34 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:00:34 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:00:34 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:00:34 --> URI Class Initialized
+INFO - 2017-05-14 07:00:34 --> Router Class Initialized
+INFO - 2017-05-14 07:00:34 --> Output Class Initialized
+INFO - 2017-05-14 07:00:34 --> Security Class Initialized
+DEBUG - 2017-05-14 07:00:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:00:34 --> Input Class Initialized
+INFO - 2017-05-14 07:00:34 --> Language Class Initialized
+INFO - 2017-05-14 07:00:34 --> Loader Class Initialized
+INFO - 2017-05-14 07:00:34 --> Controller Class Initialized
+INFO - 2017-05-14 07:00:34 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:00:34 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:00:34 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:00:35 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:00:35 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:00:35 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:00:35 --> Model Class Initialized
+INFO - 2017-05-14 07:00:35 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:00:35 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:00:35 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:00:35 --> Final output sent to browser
+DEBUG - 2017-05-14 07:00:35 --> Total execution time: 0.2793
+INFO - 2017-05-14 07:00:39 --> Config Class Initialized
+INFO - 2017-05-14 07:00:39 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:00:39 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:00:39 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:00:39 --> URI Class Initialized
+INFO - 2017-05-14 07:00:39 --> Router Class Initialized
+INFO - 2017-05-14 07:00:39 --> Output Class Initialized
+INFO - 2017-05-14 07:00:39 --> Security Class Initialized
+DEBUG - 2017-05-14 07:00:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:00:39 --> Input Class Initialized
+INFO - 2017-05-14 07:00:39 --> Language Class Initialized
+INFO - 2017-05-14 07:00:39 --> Loader Class Initialized
+INFO - 2017-05-14 07:00:39 --> Controller Class Initialized
+INFO - 2017-05-14 07:00:39 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:00:39 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:00:39 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:00:39 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:00:39 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:00:39 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:00:39 --> Model Class Initialized
+INFO - 2017-05-14 07:00:39 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:00:39 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:00:39 --> File loaded: F:\workplace\SE\se_project\views\neon/home-page.html
+INFO - 2017-05-14 07:00:39 --> Final output sent to browser
+DEBUG - 2017-05-14 07:00:39 --> Total execution time: 0.3046
+INFO - 2017-05-14 07:00:49 --> Config Class Initialized
+INFO - 2017-05-14 07:00:49 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:00:49 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:00:49 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:00:49 --> URI Class Initialized
+INFO - 2017-05-14 07:00:49 --> Router Class Initialized
+INFO - 2017-05-14 07:00:49 --> Output Class Initialized
+INFO - 2017-05-14 07:00:49 --> Security Class Initialized
+DEBUG - 2017-05-14 07:00:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:00:49 --> Input Class Initialized
+INFO - 2017-05-14 07:00:49 --> Language Class Initialized
+INFO - 2017-05-14 07:00:49 --> Loader Class Initialized
+INFO - 2017-05-14 07:00:49 --> Controller Class Initialized
+INFO - 2017-05-14 07:00:49 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:00:49 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:00:49 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:00:49 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:00:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:00:49 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:00:49 --> Model Class Initialized
+INFO - 2017-05-14 07:00:49 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:00:49 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:00:49 --> Final output sent to browser
+DEBUG - 2017-05-14 07:00:49 --> Total execution time: 0.2027
+INFO - 2017-05-14 07:00:53 --> Config Class Initialized
+INFO - 2017-05-14 07:00:53 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:00:53 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:00:53 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:00:53 --> URI Class Initialized
+INFO - 2017-05-14 07:00:53 --> Router Class Initialized
+INFO - 2017-05-14 07:00:53 --> Output Class Initialized
+INFO - 2017-05-14 07:00:53 --> Security Class Initialized
+DEBUG - 2017-05-14 07:00:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:00:53 --> Input Class Initialized
+INFO - 2017-05-14 07:00:53 --> Language Class Initialized
+INFO - 2017-05-14 07:00:53 --> Loader Class Initialized
+INFO - 2017-05-14 07:00:53 --> Controller Class Initialized
+INFO - 2017-05-14 07:00:53 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:00:53 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:00:53 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:00:53 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:00:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:00:53 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:00:53 --> Model Class Initialized
+INFO - 2017-05-14 07:00:54 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:00:54 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:00:54 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:00:54 --> Final output sent to browser
+DEBUG - 2017-05-14 07:00:54 --> Total execution time: 0.2357
+INFO - 2017-05-14 07:00:56 --> Config Class Initialized
+INFO - 2017-05-14 07:00:56 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:00:56 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:00:56 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:00:56 --> URI Class Initialized
+INFO - 2017-05-14 07:00:56 --> Router Class Initialized
+INFO - 2017-05-14 07:00:56 --> Output Class Initialized
+INFO - 2017-05-14 07:00:56 --> Security Class Initialized
+DEBUG - 2017-05-14 07:00:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:00:56 --> Input Class Initialized
+INFO - 2017-05-14 07:00:56 --> Language Class Initialized
+INFO - 2017-05-14 07:00:56 --> Loader Class Initialized
+INFO - 2017-05-14 07:00:56 --> Controller Class Initialized
+INFO - 2017-05-14 07:00:56 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:00:56 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:00:56 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:00:56 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:00:56 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:00:56 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:00:56 --> Model Class Initialized
+INFO - 2017-05-14 07:00:56 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:00:56 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:00:56 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:00:56 --> Final output sent to browser
+DEBUG - 2017-05-14 07:00:56 --> Total execution time: 0.2652
+INFO - 2017-05-14 07:00:57 --> Config Class Initialized
+INFO - 2017-05-14 07:00:57 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:00:57 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:00:57 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:00:57 --> URI Class Initialized
+INFO - 2017-05-14 07:00:57 --> Router Class Initialized
+INFO - 2017-05-14 07:00:57 --> Output Class Initialized
+INFO - 2017-05-14 07:00:57 --> Security Class Initialized
+DEBUG - 2017-05-14 07:00:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:00:57 --> Input Class Initialized
+INFO - 2017-05-14 07:00:57 --> Language Class Initialized
+INFO - 2017-05-14 07:00:57 --> Loader Class Initialized
+INFO - 2017-05-14 07:00:57 --> Controller Class Initialized
+INFO - 2017-05-14 07:00:57 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:00:57 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:00:57 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:00:57 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:00:57 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:00:57 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:00:57 --> Model Class Initialized
+INFO - 2017-05-14 07:00:57 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:00:57 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:00:57 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:00:57 --> Final output sent to browser
+DEBUG - 2017-05-14 07:00:57 --> Total execution time: 0.2638
+INFO - 2017-05-14 07:01:05 --> Config Class Initialized
+INFO - 2017-05-14 07:01:05 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:01:05 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:01:05 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:01:05 --> URI Class Initialized
+INFO - 2017-05-14 07:01:05 --> Router Class Initialized
+INFO - 2017-05-14 07:01:05 --> Output Class Initialized
+INFO - 2017-05-14 07:01:05 --> Security Class Initialized
+DEBUG - 2017-05-14 07:01:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:01:05 --> Input Class Initialized
+INFO - 2017-05-14 07:01:05 --> Language Class Initialized
+INFO - 2017-05-14 07:01:05 --> Loader Class Initialized
+INFO - 2017-05-14 07:01:05 --> Controller Class Initialized
+INFO - 2017-05-14 07:01:05 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:01:05 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:01:05 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:01:05 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:01:05 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:01:05 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:01:05 --> Model Class Initialized
+INFO - 2017-05-14 07:01:05 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:01:05 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:01:06 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:01:06 --> Final output sent to browser
+DEBUG - 2017-05-14 07:01:06 --> Total execution time: 0.2723
+INFO - 2017-05-14 07:01:16 --> Config Class Initialized
+INFO - 2017-05-14 07:01:16 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:01:16 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:01:16 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:01:16 --> URI Class Initialized
+INFO - 2017-05-14 07:01:16 --> Router Class Initialized
+INFO - 2017-05-14 07:01:16 --> Output Class Initialized
+INFO - 2017-05-14 07:01:16 --> Security Class Initialized
+DEBUG - 2017-05-14 07:01:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:01:16 --> Input Class Initialized
+INFO - 2017-05-14 07:01:16 --> Language Class Initialized
+INFO - 2017-05-14 07:01:16 --> Loader Class Initialized
+INFO - 2017-05-14 07:01:16 --> Controller Class Initialized
+INFO - 2017-05-14 07:01:16 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:01:16 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:01:16 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:01:16 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:01:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:01:16 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:01:16 --> Model Class Initialized
+INFO - 2017-05-14 07:01:16 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:01:16 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:01:16 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:01:16 --> Final output sent to browser
+DEBUG - 2017-05-14 07:01:16 --> Total execution time: 0.2537
+INFO - 2017-05-14 07:01:54 --> Config Class Initialized
+INFO - 2017-05-14 07:01:54 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:01:54 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:01:54 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:01:54 --> URI Class Initialized
+INFO - 2017-05-14 07:01:54 --> Router Class Initialized
+INFO - 2017-05-14 07:01:54 --> Output Class Initialized
+INFO - 2017-05-14 07:01:54 --> Security Class Initialized
+DEBUG - 2017-05-14 07:01:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:01:54 --> Input Class Initialized
+INFO - 2017-05-14 07:01:54 --> Language Class Initialized
+INFO - 2017-05-14 07:01:54 --> Loader Class Initialized
+INFO - 2017-05-14 07:01:54 --> Controller Class Initialized
+INFO - 2017-05-14 07:01:54 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:01:54 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:01:54 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:01:54 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:01:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:01:54 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:01:54 --> Model Class Initialized
+INFO - 2017-05-14 07:01:54 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:01:54 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:01:54 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:01:54 --> Final output sent to browser
+DEBUG - 2017-05-14 07:01:54 --> Total execution time: 0.3063
+INFO - 2017-05-14 07:03:12 --> Config Class Initialized
+INFO - 2017-05-14 07:03:12 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:03:12 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:03:12 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:03:12 --> URI Class Initialized
+INFO - 2017-05-14 07:03:12 --> Router Class Initialized
+INFO - 2017-05-14 07:03:12 --> Output Class Initialized
+INFO - 2017-05-14 07:03:12 --> Security Class Initialized
+DEBUG - 2017-05-14 07:03:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:03:12 --> Input Class Initialized
+INFO - 2017-05-14 07:03:12 --> Language Class Initialized
+INFO - 2017-05-14 07:03:12 --> Loader Class Initialized
+INFO - 2017-05-14 07:03:12 --> Controller Class Initialized
+INFO - 2017-05-14 07:03:12 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:03:12 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:03:12 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:03:12 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:03:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:03:12 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:03:12 --> Model Class Initialized
+INFO - 2017-05-14 07:03:12 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:03:12 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:03:12 --> Final output sent to browser
+DEBUG - 2017-05-14 07:03:12 --> Total execution time: 0.2050
+INFO - 2017-05-14 07:03:19 --> Config Class Initialized
+INFO - 2017-05-14 07:03:19 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:03:19 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:03:19 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:03:19 --> URI Class Initialized
+INFO - 2017-05-14 07:03:19 --> Router Class Initialized
+INFO - 2017-05-14 07:03:19 --> Output Class Initialized
+INFO - 2017-05-14 07:03:19 --> Security Class Initialized
+DEBUG - 2017-05-14 07:03:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:03:19 --> Input Class Initialized
+INFO - 2017-05-14 07:03:19 --> Language Class Initialized
+INFO - 2017-05-14 07:03:19 --> Loader Class Initialized
+INFO - 2017-05-14 07:03:19 --> Controller Class Initialized
+INFO - 2017-05-14 07:03:19 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:03:19 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:03:19 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:03:19 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:03:19 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:03:19 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:03:19 --> Model Class Initialized
+INFO - 2017-05-14 07:03:20 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:03:20 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:03:20 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:03:20 --> Final output sent to browser
+DEBUG - 2017-05-14 07:03:20 --> Total execution time: 0.2667
+INFO - 2017-05-14 07:03:44 --> Config Class Initialized
+INFO - 2017-05-14 07:03:44 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:03:44 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:03:44 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:03:44 --> URI Class Initialized
+INFO - 2017-05-14 07:03:44 --> Router Class Initialized
+INFO - 2017-05-14 07:03:44 --> Output Class Initialized
+INFO - 2017-05-14 07:03:44 --> Security Class Initialized
+DEBUG - 2017-05-14 07:03:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:03:44 --> Input Class Initialized
+INFO - 2017-05-14 07:03:44 --> Language Class Initialized
+INFO - 2017-05-14 07:03:44 --> Loader Class Initialized
+INFO - 2017-05-14 07:03:44 --> Controller Class Initialized
+INFO - 2017-05-14 07:03:44 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:03:44 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:03:44 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:03:44 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:03:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:03:44 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:03:44 --> Model Class Initialized
+INFO - 2017-05-14 07:03:44 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:03:44 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:03:44 --> Final output sent to browser
+DEBUG - 2017-05-14 07:03:44 --> Total execution time: 0.1949
+INFO - 2017-05-14 07:03:52 --> Config Class Initialized
+INFO - 2017-05-14 07:03:52 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:03:52 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:03:52 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:03:52 --> URI Class Initialized
+INFO - 2017-05-14 07:03:52 --> Router Class Initialized
+INFO - 2017-05-14 07:03:52 --> Output Class Initialized
+INFO - 2017-05-14 07:03:52 --> Security Class Initialized
+DEBUG - 2017-05-14 07:03:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:03:52 --> Input Class Initialized
+INFO - 2017-05-14 07:03:52 --> Language Class Initialized
+INFO - 2017-05-14 07:03:52 --> Loader Class Initialized
+INFO - 2017-05-14 07:03:52 --> Controller Class Initialized
+INFO - 2017-05-14 07:03:52 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:03:52 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:03:52 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:03:52 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:03:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:03:52 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:03:52 --> Model Class Initialized
+INFO - 2017-05-14 07:03:52 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:03:52 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:03:52 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:03:52 --> Final output sent to browser
+DEBUG - 2017-05-14 07:03:52 --> Total execution time: 0.2746
+INFO - 2017-05-14 07:04:54 --> Config Class Initialized
+INFO - 2017-05-14 07:04:54 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:04:54 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:04:54 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:04:54 --> URI Class Initialized
+INFO - 2017-05-14 07:04:54 --> Router Class Initialized
+INFO - 2017-05-14 07:04:54 --> Output Class Initialized
+INFO - 2017-05-14 07:04:54 --> Security Class Initialized
+DEBUG - 2017-05-14 07:04:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:04:54 --> Input Class Initialized
+INFO - 2017-05-14 07:04:54 --> Language Class Initialized
+INFO - 2017-05-14 07:04:54 --> Loader Class Initialized
+INFO - 2017-05-14 07:04:54 --> Controller Class Initialized
+INFO - 2017-05-14 07:04:54 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:04:54 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:04:54 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:04:54 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:04:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:04:54 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:04:54 --> Model Class Initialized
+INFO - 2017-05-14 07:04:54 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:04:54 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:04:54 --> Final output sent to browser
+DEBUG - 2017-05-14 07:04:54 --> Total execution time: 0.2263
+INFO - 2017-05-14 07:05:02 --> Config Class Initialized
+INFO - 2017-05-14 07:05:02 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:05:02 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:05:02 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:05:02 --> URI Class Initialized
+INFO - 2017-05-14 07:05:02 --> Router Class Initialized
+INFO - 2017-05-14 07:05:02 --> Output Class Initialized
+INFO - 2017-05-14 07:05:02 --> Security Class Initialized
+DEBUG - 2017-05-14 07:05:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:05:02 --> Input Class Initialized
+INFO - 2017-05-14 07:05:02 --> Language Class Initialized
+INFO - 2017-05-14 07:05:02 --> Loader Class Initialized
+INFO - 2017-05-14 07:05:02 --> Controller Class Initialized
+INFO - 2017-05-14 07:05:02 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:05:02 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:05:02 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:05:02 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:05:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:05:02 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:05:02 --> Model Class Initialized
+INFO - 2017-05-14 07:05:02 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:05:02 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:05:02 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:05:02 --> Final output sent to browser
+DEBUG - 2017-05-14 07:05:02 --> Total execution time: 0.2768
+INFO - 2017-05-14 07:05:24 --> Config Class Initialized
+INFO - 2017-05-14 07:05:24 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:05:24 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:05:24 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:05:24 --> URI Class Initialized
+INFO - 2017-05-14 07:05:24 --> Router Class Initialized
+INFO - 2017-05-14 07:05:24 --> Output Class Initialized
+INFO - 2017-05-14 07:05:24 --> Security Class Initialized
+DEBUG - 2017-05-14 07:05:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:05:24 --> Input Class Initialized
+INFO - 2017-05-14 07:05:24 --> Language Class Initialized
+INFO - 2017-05-14 07:05:24 --> Loader Class Initialized
+INFO - 2017-05-14 07:05:24 --> Controller Class Initialized
+INFO - 2017-05-14 07:05:24 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:05:24 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:05:24 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:05:24 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:05:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:05:24 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:05:24 --> Model Class Initialized
+INFO - 2017-05-14 07:05:24 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:05:24 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:05:24 --> Final output sent to browser
+DEBUG - 2017-05-14 07:05:24 --> Total execution time: 0.2352
+INFO - 2017-05-14 07:05:34 --> Config Class Initialized
+INFO - 2017-05-14 07:05:34 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:05:34 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:05:34 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:05:34 --> URI Class Initialized
+INFO - 2017-05-14 07:05:34 --> Router Class Initialized
+INFO - 2017-05-14 07:05:34 --> Output Class Initialized
+INFO - 2017-05-14 07:05:34 --> Security Class Initialized
+DEBUG - 2017-05-14 07:05:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:05:34 --> Input Class Initialized
+INFO - 2017-05-14 07:05:34 --> Language Class Initialized
+INFO - 2017-05-14 07:05:34 --> Loader Class Initialized
+INFO - 2017-05-14 07:05:34 --> Controller Class Initialized
+INFO - 2017-05-14 07:05:34 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:05:34 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:05:34 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:05:34 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:05:34 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:05:34 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:05:34 --> Model Class Initialized
+INFO - 2017-05-14 07:05:34 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:05:34 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:05:34 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:05:34 --> Final output sent to browser
+DEBUG - 2017-05-14 07:05:34 --> Total execution time: 0.3067
+INFO - 2017-05-14 07:05:54 --> Config Class Initialized
+INFO - 2017-05-14 07:05:54 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:05:54 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:05:54 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:05:54 --> URI Class Initialized
+INFO - 2017-05-14 07:05:54 --> Router Class Initialized
+INFO - 2017-05-14 07:05:54 --> Output Class Initialized
+INFO - 2017-05-14 07:05:54 --> Security Class Initialized
+DEBUG - 2017-05-14 07:05:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:05:54 --> Input Class Initialized
+INFO - 2017-05-14 07:05:54 --> Language Class Initialized
+INFO - 2017-05-14 07:05:54 --> Loader Class Initialized
+INFO - 2017-05-14 07:05:54 --> Controller Class Initialized
+INFO - 2017-05-14 07:05:54 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:05:54 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:05:54 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:05:54 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:05:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:05:54 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:05:54 --> Model Class Initialized
+INFO - 2017-05-14 07:05:54 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:05:54 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:05:54 --> Final output sent to browser
+DEBUG - 2017-05-14 07:05:54 --> Total execution time: 0.2107
+INFO - 2017-05-14 07:06:02 --> Config Class Initialized
+INFO - 2017-05-14 07:06:02 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:06:02 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:06:02 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:06:02 --> URI Class Initialized
+INFO - 2017-05-14 07:06:02 --> Router Class Initialized
+INFO - 2017-05-14 07:06:02 --> Output Class Initialized
+INFO - 2017-05-14 07:06:02 --> Security Class Initialized
+DEBUG - 2017-05-14 07:06:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:06:02 --> Input Class Initialized
+INFO - 2017-05-14 07:06:02 --> Language Class Initialized
+INFO - 2017-05-14 07:06:02 --> Loader Class Initialized
+INFO - 2017-05-14 07:06:02 --> Controller Class Initialized
+INFO - 2017-05-14 07:06:02 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:06:02 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:06:02 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:06:02 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:06:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:06:02 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:06:02 --> Model Class Initialized
+INFO - 2017-05-14 07:06:02 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:06:02 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:06:02 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:06:02 --> Final output sent to browser
+DEBUG - 2017-05-14 07:06:02 --> Total execution time: 0.2793
+INFO - 2017-05-14 07:06:21 --> Config Class Initialized
+INFO - 2017-05-14 07:06:21 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:06:21 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:06:21 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:06:21 --> URI Class Initialized
+INFO - 2017-05-14 07:06:21 --> Router Class Initialized
+INFO - 2017-05-14 07:06:21 --> Output Class Initialized
+INFO - 2017-05-14 07:06:21 --> Security Class Initialized
+DEBUG - 2017-05-14 07:06:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:06:21 --> Input Class Initialized
+INFO - 2017-05-14 07:06:21 --> Language Class Initialized
+INFO - 2017-05-14 07:06:21 --> Loader Class Initialized
+INFO - 2017-05-14 07:06:21 --> Controller Class Initialized
+INFO - 2017-05-14 07:06:21 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:06:21 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:06:21 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:06:21 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:06:21 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:06:21 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:06:21 --> Model Class Initialized
+INFO - 2017-05-14 07:06:21 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:06:21 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:06:21 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:06:21 --> Final output sent to browser
+DEBUG - 2017-05-14 07:06:21 --> Total execution time: 0.2664
+INFO - 2017-05-14 07:06:24 --> Config Class Initialized
+INFO - 2017-05-14 07:06:24 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:06:24 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:06:24 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:06:24 --> URI Class Initialized
+INFO - 2017-05-14 07:06:24 --> Router Class Initialized
+INFO - 2017-05-14 07:06:24 --> Output Class Initialized
+INFO - 2017-05-14 07:06:24 --> Security Class Initialized
+DEBUG - 2017-05-14 07:06:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:06:24 --> Input Class Initialized
+INFO - 2017-05-14 07:06:24 --> Language Class Initialized
+INFO - 2017-05-14 07:06:24 --> Loader Class Initialized
+INFO - 2017-05-14 07:06:24 --> Controller Class Initialized
+INFO - 2017-05-14 07:06:24 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:06:24 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:06:24 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:06:24 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:06:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:06:24 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:06:24 --> Model Class Initialized
+INFO - 2017-05-14 07:06:24 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:06:24 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:06:24 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:06:24 --> Final output sent to browser
+DEBUG - 2017-05-14 07:06:24 --> Total execution time: 0.3012
+INFO - 2017-05-14 07:06:51 --> Config Class Initialized
+INFO - 2017-05-14 07:06:51 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:06:51 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:06:51 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:06:51 --> URI Class Initialized
+INFO - 2017-05-14 07:06:51 --> Router Class Initialized
+INFO - 2017-05-14 07:06:51 --> Output Class Initialized
+INFO - 2017-05-14 07:06:51 --> Security Class Initialized
+DEBUG - 2017-05-14 07:06:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:06:51 --> Input Class Initialized
+INFO - 2017-05-14 07:06:51 --> Language Class Initialized
+INFO - 2017-05-14 07:06:51 --> Loader Class Initialized
+INFO - 2017-05-14 07:06:51 --> Controller Class Initialized
+INFO - 2017-05-14 07:06:51 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:06:51 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:06:51 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:06:51 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:06:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:06:51 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:06:51 --> Model Class Initialized
+INFO - 2017-05-14 07:06:51 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:06:52 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:06:52 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:06:52 --> Final output sent to browser
+DEBUG - 2017-05-14 07:06:52 --> Total execution time: 0.2861
+INFO - 2017-05-14 07:06:57 --> Config Class Initialized
+INFO - 2017-05-14 07:06:57 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:06:57 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:06:57 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:06:57 --> URI Class Initialized
+INFO - 2017-05-14 07:06:57 --> Router Class Initialized
+INFO - 2017-05-14 07:06:57 --> Output Class Initialized
+INFO - 2017-05-14 07:06:57 --> Security Class Initialized
+DEBUG - 2017-05-14 07:06:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:06:57 --> Input Class Initialized
+INFO - 2017-05-14 07:06:57 --> Language Class Initialized
+INFO - 2017-05-14 07:06:57 --> Loader Class Initialized
+INFO - 2017-05-14 07:06:57 --> Controller Class Initialized
+INFO - 2017-05-14 07:06:57 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:06:57 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:06:57 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:06:57 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:06:57 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:06:57 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:06:57 --> Model Class Initialized
+INFO - 2017-05-14 07:06:57 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:06:57 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:06:57 --> Final output sent to browser
+DEBUG - 2017-05-14 07:06:57 --> Total execution time: 0.2164
+INFO - 2017-05-14 07:07:04 --> Config Class Initialized
+INFO - 2017-05-14 07:07:04 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:07:04 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:07:04 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:07:04 --> URI Class Initialized
+INFO - 2017-05-14 07:07:04 --> Router Class Initialized
+INFO - 2017-05-14 07:07:04 --> Output Class Initialized
+INFO - 2017-05-14 07:07:04 --> Security Class Initialized
+DEBUG - 2017-05-14 07:07:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:07:04 --> Input Class Initialized
+INFO - 2017-05-14 07:07:04 --> Language Class Initialized
+INFO - 2017-05-14 07:07:04 --> Loader Class Initialized
+INFO - 2017-05-14 07:07:04 --> Controller Class Initialized
+INFO - 2017-05-14 07:07:04 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:07:04 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:07:04 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:07:04 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:07:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:07:04 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:07:04 --> Model Class Initialized
+INFO - 2017-05-14 07:07:04 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:07:05 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:07:05 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:07:05 --> Final output sent to browser
+DEBUG - 2017-05-14 07:07:05 --> Total execution time: 0.3158
+INFO - 2017-05-14 07:07:35 --> Config Class Initialized
+INFO - 2017-05-14 07:07:35 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:07:35 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:07:35 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:07:35 --> URI Class Initialized
+INFO - 2017-05-14 07:07:35 --> Router Class Initialized
+INFO - 2017-05-14 07:07:35 --> Output Class Initialized
+INFO - 2017-05-14 07:07:35 --> Security Class Initialized
+DEBUG - 2017-05-14 07:07:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:07:35 --> Input Class Initialized
+INFO - 2017-05-14 07:07:35 --> Language Class Initialized
+INFO - 2017-05-14 07:07:35 --> Loader Class Initialized
+INFO - 2017-05-14 07:07:35 --> Controller Class Initialized
+INFO - 2017-05-14 07:07:36 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:07:36 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:07:36 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:07:36 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:07:36 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:07:36 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:07:36 --> Model Class Initialized
+INFO - 2017-05-14 07:07:36 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:07:36 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:07:36 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:07:36 --> Final output sent to browser
+DEBUG - 2017-05-14 07:07:36 --> Total execution time: 0.2584
+INFO - 2017-05-14 07:08:09 --> Config Class Initialized
+INFO - 2017-05-14 07:08:09 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:08:09 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:08:09 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:08:09 --> URI Class Initialized
+INFO - 2017-05-14 07:08:09 --> Router Class Initialized
+INFO - 2017-05-14 07:08:09 --> Output Class Initialized
+INFO - 2017-05-14 07:08:09 --> Security Class Initialized
+DEBUG - 2017-05-14 07:08:09 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:08:09 --> Input Class Initialized
+INFO - 2017-05-14 07:08:09 --> Language Class Initialized
+INFO - 2017-05-14 07:08:09 --> Loader Class Initialized
+INFO - 2017-05-14 07:08:09 --> Controller Class Initialized
+INFO - 2017-05-14 07:08:09 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:08:09 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:08:09 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:08:09 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:08:09 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:08:09 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:08:09 --> Model Class Initialized
+INFO - 2017-05-14 07:08:09 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:08:09 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:08:10 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:08:10 --> Final output sent to browser
+DEBUG - 2017-05-14 07:08:10 --> Total execution time: 0.2509
+INFO - 2017-05-14 07:08:50 --> Config Class Initialized
+INFO - 2017-05-14 07:08:50 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:08:50 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:08:50 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:08:50 --> URI Class Initialized
+INFO - 2017-05-14 07:08:50 --> Router Class Initialized
+INFO - 2017-05-14 07:08:50 --> Output Class Initialized
+INFO - 2017-05-14 07:08:50 --> Security Class Initialized
+DEBUG - 2017-05-14 07:08:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:08:50 --> Input Class Initialized
+INFO - 2017-05-14 07:08:50 --> Language Class Initialized
+INFO - 2017-05-14 07:08:50 --> Loader Class Initialized
+INFO - 2017-05-14 07:08:50 --> Controller Class Initialized
+INFO - 2017-05-14 07:08:50 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:08:50 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:08:50 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:08:50 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:08:50 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:08:50 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:08:50 --> Model Class Initialized
+INFO - 2017-05-14 07:08:50 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:08:51 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:08:51 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:08:51 --> Final output sent to browser
+DEBUG - 2017-05-14 07:08:51 --> Total execution time: 0.3188
+INFO - 2017-05-14 07:09:07 --> Config Class Initialized
+INFO - 2017-05-14 07:09:07 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:09:07 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:09:07 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:09:07 --> URI Class Initialized
+INFO - 2017-05-14 07:09:07 --> Router Class Initialized
+INFO - 2017-05-14 07:09:07 --> Output Class Initialized
+INFO - 2017-05-14 07:09:07 --> Security Class Initialized
+DEBUG - 2017-05-14 07:09:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:09:07 --> Input Class Initialized
+INFO - 2017-05-14 07:09:07 --> Language Class Initialized
+INFO - 2017-05-14 07:09:07 --> Loader Class Initialized
+INFO - 2017-05-14 07:09:07 --> Controller Class Initialized
+INFO - 2017-05-14 07:09:07 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:09:07 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:09:07 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:09:07 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:09:07 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:09:07 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:09:07 --> Model Class Initialized
+INFO - 2017-05-14 07:09:07 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:09:07 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:09:07 --> File loaded: F:\workplace\SE\se_project\views\neon/home-page.html
+INFO - 2017-05-14 07:09:07 --> Final output sent to browser
+DEBUG - 2017-05-14 07:09:07 --> Total execution time: 0.2846
+INFO - 2017-05-14 07:09:11 --> Config Class Initialized
+INFO - 2017-05-14 07:09:11 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:09:11 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:09:11 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:09:11 --> URI Class Initialized
+INFO - 2017-05-14 07:09:11 --> Router Class Initialized
+INFO - 2017-05-14 07:09:11 --> Output Class Initialized
+INFO - 2017-05-14 07:09:11 --> Security Class Initialized
+DEBUG - 2017-05-14 07:09:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:09:11 --> Input Class Initialized
+INFO - 2017-05-14 07:09:11 --> Language Class Initialized
+INFO - 2017-05-14 07:09:11 --> Loader Class Initialized
+INFO - 2017-05-14 07:09:11 --> Controller Class Initialized
+INFO - 2017-05-14 07:09:11 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:09:11 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:09:11 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:09:11 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:09:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:09:11 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:09:11 --> Model Class Initialized
+INFO - 2017-05-14 07:09:11 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:09:12 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-register.html
+INFO - 2017-05-14 07:09:12 --> Final output sent to browser
+DEBUG - 2017-05-14 07:09:12 --> Total execution time: 0.2091
+INFO - 2017-05-14 07:09:21 --> Config Class Initialized
+INFO - 2017-05-14 07:09:21 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:09:21 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:09:21 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:09:21 --> URI Class Initialized
+INFO - 2017-05-14 07:09:21 --> Router Class Initialized
+INFO - 2017-05-14 07:09:21 --> Output Class Initialized
+INFO - 2017-05-14 07:09:21 --> Security Class Initialized
+DEBUG - 2017-05-14 07:09:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:09:21 --> Input Class Initialized
+INFO - 2017-05-14 07:09:21 --> Language Class Initialized
+INFO - 2017-05-14 07:09:21 --> Loader Class Initialized
+INFO - 2017-05-14 07:09:21 --> Controller Class Initialized
+INFO - 2017-05-14 07:09:21 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:09:21 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:09:21 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:09:21 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:09:21 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:09:21 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:09:21 --> Model Class Initialized
+INFO - 2017-05-14 07:09:21 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:09:21 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:09:22 --> File loaded: F:\workplace\SE\se_project\views\neon/home-page.html
+INFO - 2017-05-14 07:09:22 --> Final output sent to browser
+DEBUG - 2017-05-14 07:09:22 --> Total execution time: 0.3036
+INFO - 2017-05-14 07:09:27 --> Config Class Initialized
+INFO - 2017-05-14 07:09:27 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:09:27 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:09:27 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:09:27 --> URI Class Initialized
+INFO - 2017-05-14 07:09:27 --> Router Class Initialized
+INFO - 2017-05-14 07:09:27 --> Output Class Initialized
+INFO - 2017-05-14 07:09:27 --> Security Class Initialized
+DEBUG - 2017-05-14 07:09:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:09:27 --> Input Class Initialized
+INFO - 2017-05-14 07:09:27 --> Language Class Initialized
+INFO - 2017-05-14 07:09:27 --> Loader Class Initialized
+INFO - 2017-05-14 07:09:27 --> Controller Class Initialized
+INFO - 2017-05-14 07:09:27 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:09:27 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:09:27 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:09:27 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:09:27 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:09:27 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:09:27 --> Model Class Initialized
+INFO - 2017-05-14 07:09:28 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:09:28 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:09:28 --> Final output sent to browser
+DEBUG - 2017-05-14 07:09:28 --> Total execution time: 0.2089
+INFO - 2017-05-14 07:09:32 --> Config Class Initialized
+INFO - 2017-05-14 07:09:32 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:09:32 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:09:32 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:09:32 --> URI Class Initialized
+INFO - 2017-05-14 07:09:32 --> Router Class Initialized
+INFO - 2017-05-14 07:09:32 --> Output Class Initialized
+INFO - 2017-05-14 07:09:32 --> Security Class Initialized
+DEBUG - 2017-05-14 07:09:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:09:32 --> Input Class Initialized
+INFO - 2017-05-14 07:09:32 --> Language Class Initialized
+INFO - 2017-05-14 07:09:32 --> Loader Class Initialized
+INFO - 2017-05-14 07:09:32 --> Controller Class Initialized
+INFO - 2017-05-14 07:09:32 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:09:32 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:09:32 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:09:32 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:09:32 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:09:32 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:09:32 --> Model Class Initialized
+INFO - 2017-05-14 07:09:33 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:09:33 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:09:33 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:09:33 --> Final output sent to browser
+DEBUG - 2017-05-14 07:09:33 --> Total execution time: 0.2825
+INFO - 2017-05-14 07:09:37 --> Config Class Initialized
+INFO - 2017-05-14 07:09:37 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:09:37 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:09:37 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:09:37 --> URI Class Initialized
+INFO - 2017-05-14 07:09:37 --> Router Class Initialized
+INFO - 2017-05-14 07:09:37 --> Output Class Initialized
+INFO - 2017-05-14 07:09:37 --> Security Class Initialized
+DEBUG - 2017-05-14 07:09:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:09:37 --> Input Class Initialized
+INFO - 2017-05-14 07:09:37 --> Language Class Initialized
+INFO - 2017-05-14 07:09:37 --> Loader Class Initialized
+INFO - 2017-05-14 07:09:37 --> Controller Class Initialized
+INFO - 2017-05-14 07:09:37 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:09:37 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:09:37 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:09:37 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:09:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:09:37 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:09:37 --> Model Class Initialized
+INFO - 2017-05-14 07:09:37 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:09:38 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:09:38 --> File loaded: F:\workplace\SE\se_project\views\neon/extra-login.html
+INFO - 2017-05-14 07:09:38 --> Final output sent to browser
+DEBUG - 2017-05-14 07:09:38 --> Total execution time: 0.3018
+INFO - 2017-05-14 07:09:41 --> Config Class Initialized
+INFO - 2017-05-14 07:09:41 --> Hooks Class Initialized
+DEBUG - 2017-05-14 07:09:41 --> UTF-8 Support Enabled
+INFO - 2017-05-14 07:09:41 --> Utf8 Class Initialized
+INFO - 2017-05-14 07:09:41 --> URI Class Initialized
+INFO - 2017-05-14 07:09:41 --> Router Class Initialized
+INFO - 2017-05-14 07:09:42 --> Output Class Initialized
+INFO - 2017-05-14 07:09:42 --> Security Class Initialized
+DEBUG - 2017-05-14 07:09:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-05-14 07:09:42 --> Input Class Initialized
+INFO - 2017-05-14 07:09:42 --> Language Class Initialized
+INFO - 2017-05-14 07:09:42 --> Loader Class Initialized
+INFO - 2017-05-14 07:09:42 --> Controller Class Initialized
+INFO - 2017-05-14 07:09:42 --> Helper loaded: form_helper
+INFO - 2017-05-14 07:09:42 --> Helper loaded: url_helper
+INFO - 2017-05-14 07:09:42 --> Helper loaded: cookie_helper
+INFO - 2017-05-14 07:09:42 --> Form Validation Class Initialized
+DEBUG - 2017-05-14 07:09:42 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2017-05-14 07:09:42 --> Session: Class initialized using 'files' driver.
+INFO - 2017-05-14 07:09:42 --> Model Class Initialized
+INFO - 2017-05-14 07:09:42 --> Database Driver Class Initialized
+INFO - 2017-05-14 07:09:42 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2017-05-14 07:09:42 --> File loaded: F:\workplace\SE\se_project\views\neon/home-page.html
+INFO - 2017-05-14 07:09:42 --> Final output sent to browser
+DEBUG - 2017-05-14 07:09:42 --> Total execution time: 0.2588
