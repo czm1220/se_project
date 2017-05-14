@@ -79,9 +79,9 @@ class User extends CI_Controller
         {
             //将新的用户信息插入数据库
             $this->user_model->userRegister($this->input->post('username'),$this->input->post('password'));
-
-            //加载到登录界面
-            $this->load->view('neon/extra-login.html');
+            //设置session key, 加载到用户界面
+            $this->session->set_userdata("username", $this->input->post('username'));
+            $this->load->view("neon/home-page.html");
         }
     }
 
