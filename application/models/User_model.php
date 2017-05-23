@@ -52,7 +52,7 @@ class User_model extends CI_Model
     {
         $sql = "INSERT INTO user(user, password) VALUES(?, ?)";
         $password_crypted = crypt($password, $this->salt);
-        $query = $this->db->query($sql, array($username, $password_crypted, $email));
+        $query = $this->db->query($sql, array($username, $password_crypted));
         return $query;
     }
     
