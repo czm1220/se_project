@@ -106,7 +106,7 @@ class User_model extends CI_Model
 	/**
 	 * @param $id
 	 * @return array:$a[8] $a[0]:股票最新成交价格 $a[1]:当前购买指令的最高价格 $a[2]:当前出售指令的最低价格 $a[3,4]:当日最高及最低成交价格 $a[5,6]:本周最高及最低成交价格 $a[7,8]:本月最高及最低成交价格
-	 * 查询股票
+	 * 查询股票 凡是-1的地方都是此项不存在
 	 */
 	 public function stockQuery($id){
 	 	$a = array();
@@ -186,7 +186,7 @@ class User_model extends CI_Model
 	/**
 	 * @param $username
 	 * @return array:$a[4] $a[0]:股票名称 $a[1]:持有股票总数 $a[2]:股票现在的价格 $a[3]:股票持有成本 $a[4]:持有股票损益
-	 * 对用户持有的股票进行查询
+	 * 对用户持有的股票进行查询 凡是-1的地方都是此项不存在
 	 */
 	 public function accountStockQuery($username){
 	 	$sql = "SELECT * FROM LoginUser WHERE user=?";
@@ -228,6 +228,54 @@ class User_model extends CI_Model
         	return $a;
         }
 	 }
+	 
+	/**
+	 * @param $username
+	 * @return $accId
+	 * 根据登录账户返回证券账户 -1表示资金账户或证券账户其一不存在
+	 */
+	public function getStockAcc($username){
+		$sql = "SELECT * FROM LoginUser WHERE user=?";
+        $query = $this->db->query($sql, array($username));
+        $row = $query->row();
+        $fundAccount = $row->account;
+        if($fundAccount){
+        	$sql = "SELECT * FROM PerFundAccount WHERE accountId = ?";
+        	$query = $this->db->query($sql,array($fundAccount));
+        	$row = $query->row();
+        	$stockAccount = $row->stockAccountId;
+        	if($stockAccount){
+        		return $stockAccout;
+        	}else{
+        		return -1;
+        	}
+        }else{
+        	return -1;
+        }	
+	}
+	
+	/**
+	 * @param $username
+	 * @param $fundPasswd
+	 * @return bool true：success， false： failed
+	 */
+	public function checkFundPasswd($username,$fundPasswd){
+		$sql = "SELECT * FROM LoginUser WHERE user=?";
+        $query = $this->db->query($sql, array($username));
+        $row = $query->row();
+        $fundAccount = $row->account;
+        if($fundAccount){
+        	$sql = "SELECT * FROM PerFundAccount WHERE accountId = ? AND accPassword = ?";
+        	$query = $this->db->query($sql,array($fundAccount,$fundPasswd));
+        	if($query->num_rows()){
+        		return true;
+        	}else{
+        		return false;
+        	}
+        }else{
+        	return false;
+        }
+	}
 
     /**
      * @param $str
