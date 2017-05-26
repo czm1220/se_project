@@ -34,11 +34,7 @@ class User_model extends CI_Model
          * 对明文密码进行加密，然后与数据库中的密码进行对比
          * 若两者匹配，则返回true，表示登陆密码正确
          */
-        if (crypt($password, $this->salt) == $row->password) {
-            return true;
-        } else {
-            return false;
-        }
+        return crypt($password, $this->salt) == $row->password;
     }
 
     /**
@@ -62,7 +58,8 @@ class User_model extends CI_Model
      * @param $str
      * 对crypt函数做一个封装，使之默认使用User_model里面的salt
      */
-    public function crypt($str, $salt=null){
+    public function crypt($str, $salt=null)
+    {
         if($salt == null){
             $salt = $this->salt;
         }
@@ -72,16 +69,89 @@ class User_model extends CI_Model
     /**
      * @param $name
      * @return 已存在 true；未存在 false
-     * 用户名是否存在
+     * 验证函数，用户名是否存在
      */
-    function existUserName($name){
-        $sql = "SELECT * FROM LoginUser WHERE user = '" . $name ."'" ;
-        $query = $this->db->query($sql);
+    function existUserName($name)
+    {
+        $sql = "SELECT * FROM LoginUser WHERE user = ?" ;
+        $query = $this->db->query($sql, array($name));
+        return $query->num_rows() > 0;
+    }
 
-        if($query->num_rows() > 0)
-            {
-                return true;
+    /**
+     * @param $username
+     * @param $oldPasswd
+     * @param $newPasswd
+     * @return bool true：success， false： failed
+     * 改密码
+     */
+    public function changePasswd($username,$oldPasswd,$newPasswd)
+    {
+        $sql = "UPDATE LoginUser SET password = ? WHERE user = ?";
+        $password_crypted = crypt($newPasswd, $this->salt);
+        $query = $this->db->query($sql,array($password_crypted,$username));
+        return $query;
+    }
+
+    /**
+     * @param $account
+     * @return bool true：已存在， false：不存在
+     * 查询是否存在资金账户
+     */
+    public function existFundAccount($account)
+    {
+    	$sql = "SELECT * FROM PerFundAccount WHERE accountId = ?";
+    	$query = $this->db->query($sql, array($account));
+    	return $query->num_rows() > 0;
+    }
+
+    /**
+     * @param $account
+     * @return bool true：密码正确， false：密码错误
+     * 验证资金账户用户名、密码
+     */
+    public function validateFundAccount($account, $password)
+    {
+    	$sql = "SELECT * FROM PerFundAccount WHERE accountId = ? AND accPassword = ?";
+        $password_crypted = crypt($password, $this->salt);
+        $query = $this->db->query($sql, array($account, $password_crypted));
+        return $query->num_rows() > 0;
+    }
+
+    /**
+     * @param $username
+     * @return bool true：解绑成功， false：解绑失败
+     * 解绑资金账户
+     */
+    public function unBindAccount($username)
+    {
+    	$sql = "UPDATE LoginUser SET account = null WHERE user = ?";
+    	return $this->db->query($sql, array($username));
+    }
+
+    /**
+     * @param $username
+     * @param $account
+     * @param $password
+     * @return bool true：success， false： failed
+     * 绑定资金账户
+     */
+    public function bindAccount($username, $account, $password){
+        $sql = "SELECT * FROM PerFundAccount WHERE accountId = ? AND accPassword = ?";
+        $password_crypted = crypt($password, $this->salt);
+        $query = $this->db->query($sql, array($account, $password_crypted));
+        if($query->result()){
+            $sql = "SELECT * FROM LoginUser WHERE account = ?";
+            $query = $this->db->query($sql, array($account));
+            if($query->result()){
+                return false;
+            }else{
+                $sql = "UPDATE LoginUser SET account = ? WHERE user = ?";
+                $query = $this->db->query($sql, array($account, $username));
+                return $query;
             }
-        return false;
+        }else{
+            return $query;
+        }
     }
 }

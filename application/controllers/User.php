@@ -89,7 +89,7 @@ class User extends CI_Controller
     public function set_info()
     {
         //检查输入的密码的合法性
-        $this->form_validation->set_rules('password_old', '原密码', 'required',
+        $this->form_validation->set_rules('password_old', '原密码', 'required|callback_pwd_correct',
             array('required' => '{field}不能为空'));
         $this->form_validation->set_rules('password_new', '新密码', 'required|min_length[6]|max_length[20]',
             array('required' => '{field}不能为空','max_length' => '密码应为6~20位','min_length' => '密码应为6~20位'));
@@ -107,23 +107,27 @@ class User extends CI_Controller
             //从view拿到的新密码
             $password_new = $this->input->post("password_new");
              //从view拿到的新密码的确认
-            $password_confirm = $this->input->post("password_confirm");
-            //......
-
-            //加载成功修改界面
-            $this->load->view('neon/change-password-success.html');
+            // $password_confirm = $this->input->post("password_confirm");
+            //修改数据库密码
+            if ($this->user_model->changePasswd($this->session->username, $password_old, $password_new))
+            {
+                //加载成功修改界面
+                $this->load->view('neon/change-password-success.html');
+            }
+            else
+            {
+                $this->load->view('neon/set-info.html');
+            }
         }
-
     }
-
 
     //修改资金账户页面
     public function bind_fund()
     {
-
-        $this->form_validation->set_rules('fund_account', '资金账户', 'required',
+        $this->form_validation->set_rules('fund_account', '资金账户', 'required|callback_fundAccount_check',
             array('required' => '{field}不能为空'));
-        $this->form_validation->set_rules('fund_password', '密码', 'required',
+        $this->session->set_userdata("accountId", $this->input->post('fund_account'));
+        $this->form_validation->set_rules('fund_password', '密码', 'callback_fundAccount_valid|required',
             array('required' => '{field}不能为空'));
 
         if ($this->form_validation->run() == FALSE)
@@ -132,14 +136,20 @@ class User extends CI_Controller
         }
         else
         {
-             //从view拿到的资金账号
+            //从view拿到的资金账号
             $fund_account = $this->input->post("fund_account");
             //从view拿到的资金账号密码
             $fund_password = $this->input->post("fund_password");
-            //......
-
-            //加载成功修改界面
-            $this->load->view('neon/change-password-success.html');
+            //添加账号
+            if($this->user_model->bindAccount($this->session->username, $fund_account, $fund_password))
+            {
+                //加载成功修改界面
+                $this->load->view('neon/change-password-success.html');
+            }
+            else
+            {
+                $this->load->view("neon/bind-fund.html");
+            }
         }
 
     }
@@ -147,9 +157,15 @@ class User extends CI_Controller
     public function unbind_fund()
     {
         //修改数据库的操作
-        //....
+        if($this->user_model->unBindAccount($this->session->username))
+        {
+            $this->load->view('neon/change-password-success.html');
+        }
+        else
+        {
+            $this->load->view("neon/bind-fund.html");
+        }
         //加载成功修改界面
-        $this->load->view('neon/change-password-success.html');
     }
 
     //查询股票信息
@@ -277,7 +293,7 @@ class User extends CI_Controller
         return TRUE;
     }
 
-    //检查用户名是否已存在
+    //注册时，检查用户名是否已存在
     public function is_unique($str)
     {
         if($this->user_model->existUserName($str))
@@ -288,6 +304,7 @@ class User extends CI_Controller
         return TRUE;
     }
 
+    //登录时，检查用户名是否存在
     public function username_exist($str)
     {
         if(!$this->user_model->existUserName($str))
@@ -297,6 +314,40 @@ class User extends CI_Controller
         }
         return TRUE;
     }
+
+    // 修改密码时，检查用户名、密码是否对应
+    public function pwd_correct($str)
+    {
+        if (!$this->user_model->validate($this->session->username, $str))
+        {
+            $this->form_validation->set_message('pwd_correct', '密码错误');
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+    // 绑定资金账户时，确认账户存在
+    public function fundAccount_check($str)
+    {
+        if (!$this->user_model->existFundAccount($str))
+        {
+            $this->form_validation->set_message('fundAccount_check', '资金账户不存在');
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+    // 绑定资金账户时，验证密码正确
+    public function fundAccount_valid($str)
+    {
+        if (!$this->user_model->validateFundAccount($this->session->accountId, $str))
+        {
+            $this->form_validation->set_message('fundAccount_valid', '密码错误');
+            return FALSE;
+        }
+        return TRUE;
+    }
+
     /*
     public function register_check(){
         # Response Data Array
@@ -340,5 +391,4 @@ class User extends CI_Controller
 
         echo json_encode($resp);
     }*/
-
 }

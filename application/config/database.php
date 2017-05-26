@@ -73,11 +73,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+// $db['default'] = array(
+// 	'dsn'	=> '',
+// 	'hostname' => '112.74.112.8',
+// 	'username' => 'se_project',
+// 	'password' => 'seproject@233',
+// 	'database' => 'se_project',
+// 	'dbdriver' => 'mysqli',
+// 	'dbprefix' => '',
+// 	'pconnect' => FALSE,
+// 	'db_debug' => (ENVIRONMENT !== 'production'),
+// 	'cache_on' => FALSE,
+// 	'cachedir' => '',
+// 	'char_set' => 'utf8',
+// 	'dbcollat' => 'utf8_general_ci',
+// 	'swap_pre' => '',
+// 	'encrypt' => FALSE,
+// 	'compress' => FALSE,
+// 	'stricton' => FALSE,
+// 	'failover' => array(),
+// 	'save_queries' => TRUE
+// );
+
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '112.74.112.8',
-	'username' => 'se_project',
-	'password' => 'seproject@233',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '123456',
 	'database' => 'se_project',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -92,5 +114,6 @@ $db['default'] = array(
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
-	'save_queries' => TRUE
+	'save_queries' => TRUE,
+	'port' => 3307
 );
