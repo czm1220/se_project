@@ -119,14 +119,15 @@ class User_model extends CI_Model
     }
 
     /**
-     * @param $username
-     * @return bool true：解绑成功， false：解绑失败
-     * 解绑资金账户
+     * @param $account
+     * @return bool true：已绑定， false：未绑定
+     * 验证资金账户是否已被绑定
      */
-    public function unBindAccount($username)
+    public function fundAccountBounded($user, $account)
     {
-    	$sql = "UPDATE LoginUser SET account = null WHERE user = ?";
-    	return $this->db->query($sql, array($username));
+    	$sql = "SELECT * FROM LoginUser WHERE user = ? AND account = ?";
+        $query = $this->db->query($sql, array($user, $account));
+        return $query->num_rows() > 0;
     }
 
     /**
@@ -137,21 +138,26 @@ class User_model extends CI_Model
      * 绑定资金账户
      */
     public function bindAccount($username, $account, $password){
-        $sql = "SELECT * FROM PerFundAccount WHERE accountId = ? AND accPassword = ?";
-        $password_crypted = crypt($password, $this->salt);
-        $query = $this->db->query($sql, array($account, $password_crypted));
-        if($query->result()){
-            $sql = "SELECT * FROM LoginUser WHERE account = ?";
-            $query = $this->db->query($sql, array($account));
-            if($query->result()){
-                return false;
-            }else{
-                $sql = "UPDATE LoginUser SET account = ? WHERE user = ?";
-                $query = $this->db->query($sql, array($account, $username));
-                return $query;
-            }
-        }else{
-            return $query;
-        }
+    	$sql = "UPDATE LoginUser SET account = ? WHERE user = ?";
+    	$query = $this->db->query($sql, array($account, $username));
+    	return $query;
+    }
+
+    /**
+     * @param $username
+     * @return bool true：解绑成功， false：解绑失败
+     * 解绑资金账户
+     */
+    public function unBindAccount($username)
+    {
+    	$sql = "SELECT * FROM LoginUser WHERE user = ? AND account is null";
+    	$query = $this->db->query($sql, array($username));
+    	if ($query->num_rows() == 0)
+    	{
+    		$sql = "UPDATE LoginUser SET account = null WHERE user = ?";
+    		return $this->db->query($sql, array($username));
+    	}
+    	else
+    		return false;
     }
 }

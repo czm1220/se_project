@@ -19,8 +19,7 @@ class User extends CI_Controller
     public function login()
     {
         //检查输入的用户名及密码的合法性
-        $this->form_validation->set_rules('username', '用户名', 'required|callback_username_exist',
-            array('required' => '{field}不能为空'));
+        $this->form_validation->set_rules('username', '用户名', 'callback_username_exist');
         $this->form_validation->set_rules('password', '密码', 'required',
             array('required' => '{field}不能为空'));
         $login_status = 'unknown';
@@ -64,8 +63,8 @@ class User extends CI_Controller
         //is_unique[user.username]表示在指定数据库的user表中，当前输入的username是唯一的，即这个用户名还没有被其他用户使用
         // $this->form_validation->set_rules('username', '用户名', 'required|callback_username_check|is_unique[LoginUser.user]',
         //     array('is_unique' => '{field}已存在'));
-        $this->form_validation->set_rules('username', '用户名', 'required|callback_username_check|callback_is_unique[LoginUser.user]');
-        $this->form_validation->set_rules('password', 'password', 'trim|required|callback_password_check');
+        $this->form_validation->set_rules('username', '用户名', 'callback_username_check');
+        $this->form_validation->set_rules('password', 'password', 'trim|callback_password_check');
         $this->form_validation->set_rules('password2', 'password2', 'required|matches[password]',
             array('required' => '两次输入的密码不一致', 'matches' => '两次输入的密码不一致'));
 
@@ -89,8 +88,7 @@ class User extends CI_Controller
     public function set_info()
     {
         //检查输入的密码的合法性
-        $this->form_validation->set_rules('password_old', '原密码', 'required|callback_pwd_correct',
-            array('required' => '{field}不能为空'));
+        $this->form_validation->set_rules('password_old', '原密码', 'callback_pwd_correct_check');
         $this->form_validation->set_rules('password_new', '新密码', 'required|min_length[6]|max_length[20]',
             array('required' => '{field}不能为空','max_length' => '密码应为6~20位','min_length' => '密码应为6~20位'));
         $this->form_validation->set_rules('password_confirm', '新密码确认', 'required|matches[password_new]',
@@ -124,11 +122,9 @@ class User extends CI_Controller
     //修改资金账户页面
     public function bind_fund()
     {
-        $this->form_validation->set_rules('fund_account', '资金账户', 'required|callback_fundAccount_check',
-            array('required' => '{field}不能为空'));
+        $this->form_validation->set_rules('fund_account', '资金账户', 'callback_fundAccount_check');
         $this->session->set_userdata("accountId", $this->input->post('fund_account'));
-        $this->form_validation->set_rules('fund_password', '密码', 'callback_fundAccount_valid|required',
-            array('required' => '{field}不能为空'));
+        $this->form_validation->set_rules('fund_password', '密码', 'callback_fundAccount_valid');
 
         if ($this->form_validation->run() == FALSE)
         {
@@ -163,7 +159,7 @@ class User extends CI_Controller
         }
         else
         {
-            $this->load->view("neon/bind-fund.html");
+            $this->load->view('neon/set-info.html');
         }
         //加载成功修改界面
     }
@@ -269,6 +265,11 @@ class User extends CI_Controller
     //检查注册时输入的用户名的合法性
     public function username_check($str)
     {
+        if (strlen($str) == 0)
+        {
+            $this->form_validation->set_message('username_check', '用户名不能为空');
+            return FALSE;
+        }
         if (strlen($str) < 6 || strlen($str) > 20)
         {
             $this->form_validation->set_message('username_check', '用户名应该由6~20个字符组成');
@@ -279,12 +280,22 @@ class User extends CI_Controller
             $this->form_validation->set_message('username_check', '用户名应该由字母开头，并由字母、数字和下划线组成');
             return FALSE;
         }
+        if($this->user_model->existUserName($str))
+        {
+            $this->form_validation->set_message('username_check', '用户名已存在');
+            return FALSE;
+        }
         return TRUE;
     }
 
     //检查注册时输入的密码的合法性
     public function password_check($str)
     {
+        if (strlen($str) == 0)
+        {
+            $this->form_validation->set_message('password_check', '密码不能为空');
+            return FALSE;
+        }
         if (strlen($str) < 6 || strlen($str) > 20)
         {
             $this->form_validation->set_message('password_check', '密码应该由6~20个字符组成，区分大小写');
@@ -293,20 +304,14 @@ class User extends CI_Controller
         return TRUE;
     }
 
-    //注册时，检查用户名是否已存在
-    public function is_unique($str)
-    {
-        if($this->user_model->existUserName($str))
-        {
-            $this->form_validation->set_message('is_unique', '用户名已存在');
-            return FALSE;
-        }
-        return TRUE;
-    }
-
     //登录时，检查用户名是否存在
     public function username_exist($str)
     {
+        if (strlen($str) == 0)
+        {
+            $this->form_validation->set_message('username_exist', '用户名不能为空');
+            return FALSE;
+        }
         if(!$this->user_model->existUserName($str))
         {
             $this->form_validation->set_message('username_exist', '用户名不存在');
@@ -316,11 +321,16 @@ class User extends CI_Controller
     }
 
     // 修改密码时，检查用户名、密码是否对应
-    public function pwd_correct($str)
+    public function pwd_correct_check($str)
     {
+        if (strlen($str) == 0)
+        {
+            $this->form_validation->set_message('pwd_correct_check', '原密码不能为空');
+            return FALSE;
+        }
         if (!$this->user_model->validate($this->session->username, $str))
         {
-            $this->form_validation->set_message('pwd_correct', '密码错误');
+            $this->form_validation->set_message('pwd_correct_check', '密码错误');
             return FALSE;
         }
         return TRUE;
@@ -329,9 +339,19 @@ class User extends CI_Controller
     // 绑定资金账户时，确认账户存在
     public function fundAccount_check($str)
     {
+        if (strlen($str) == 0)
+        {
+            $this->form_validation->set_message('fundAccount_check', '资金账户不能为空');
+            return FALSE;
+        }
         if (!$this->user_model->existFundAccount($str))
         {
             $this->form_validation->set_message('fundAccount_check', '资金账户不存在');
+            return FALSE;
+        }
+        if ($this->user_model->fundAccountBounded($str, $this->session->username))
+        {
+            $this->form_validation->set_message('fundAccount_check', '资金账户已被绑定');
             return FALSE;
         }
         return TRUE;
@@ -340,6 +360,11 @@ class User extends CI_Controller
     // 绑定资金账户时，验证密码正确
     public function fundAccount_valid($str)
     {
+        if (strlen($str) == 0)
+        {
+            $this->form_validation->set_message('fundAccount_valid', '密码不能为空');
+            return FALSE;
+        }
         if (!$this->user_model->validateFundAccount($this->session->accountId, $str))
         {
             $this->form_validation->set_message('fundAccount_valid', '密码错误');
