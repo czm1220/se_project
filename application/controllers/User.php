@@ -155,13 +155,14 @@ class User extends CI_Controller
         //修改数据库的操作
         if($this->user_model->unBindAccount($this->session->username))
         {
+        	//加载成功修改界面
             $this->load->view('neon/change-password-success.html');
         }
         else
         {
+            // 界面里这里一直会在解绑的界面
             $this->load->view('neon/set-info.html');
         }
-        //加载成功修改界面
     }
 
     //查询股票信息
@@ -171,8 +172,9 @@ class User extends CI_Controller
         $data['load_stock'] = false;
 
         //输入的股票代码合法性检查
-        $this->form_validation->set_rules('stockid', '股票代码', 'required',
-            array('required' => '{field}不能为空'));
+        // $this->form_validation->set_rules('stockid', '股票代码', 'required',
+        //     array('required' => '{field}不能为空', 'is_unique' => '股票代码不存在'));
+		$this->form_validation->set_rules('stockid', '股票代码', 'callback_stockExist_check');
 
         if ($this->form_validation->run() == FALSE)
         {
@@ -183,45 +185,66 @@ class User extends CI_Controller
              //从view拿到的股票代码
             $stockid = $this->input->post("stockid");
 
-            //......
-            //查询得到的股票信息
-            $stock = array("stockid"=>"123456","change"=>"-1.1","chg"=>"-0.8%","latestPrice"=>"98.7",
-                           "todayTotalVolumn"=>"1001","latestVolumn"=>"12","openingPrice"=>"95.5",
-                           "closingPrice"=>"95.3","latestBuyPrice"=>"98.7","latestSellPrice"=>"98.7");
+            //从数据库拿到股票信息
+            $row = $this->user_model->stockQuery($stockid);
+
+            //显示得到的股票信息
+            $change =$row->latestPrice - $row->closingPrice;
+            $chg = $change / $row->closingPrice;
+            $stock = array("stockid"=>$stockid,"change"=>$change,"chg"=>$chg,"latestPrice"=>$row->latestPrice,
+                           "todayTotalVolumn"=>$row->todayTotalVolumn,"latestVolumn"=>$row->latestVolumn,"openingPrice"=>$row->openingPrice,
+                           "closingPrice"=>$row->closingPrice,"latestBuyPrice"=>$row->latestBuyPrice,"latestSellPrice"=>$row->latestSellPrice);
             $data['load_stock'] = true;
             $data['stock'] = $stock;
             $this->load->view('neon/query-stock.html',$data);
         }
-
-
     }
 
     //查询资金情况
     public function query_money()
     {
         //数据库查询
-        //......
-        //资金账户信息
-        $fund = array("accountId"=>"111111","balanceOfAccount"=>"10024","availableBalance"=>"9850",
-                      "frozenBalance"=>"174");
-        $data['fund'] = $fund;
-        $this->load->view("neon/query-money.html", $data);
+        if($this->user_model->hasFundAccount($this->session->username))
+        {
+        	$row = $this->user_model->fundAccountQuery($this->session->username);
+        	//资金账户信息
+        	$fund = array("accountId"=>$this->session->accountId,"balanceOfAccount"=>$row->balanceOfAccount,
+        		"availableBalance"=>$row->balanceOfAccount-$row->frozenBalance, "frozenBalance"=>$row->frozenBalance);
+       	 	$data['fund'] = $fund;
+        	$this->load->view("neon/query-money.html", $data);
+        }
+        else
+        {
+        	// 未绑定资金账户
+        	$data['fund'] = 0;
+        	$this->load->view("neon/query-money.html", $data);
+        }
     }
 
     //查询持有股票信息
     public function query_own_stock()
     {
         //数据库查询
-        //......
-        //持有股票信息
-        $own_stock = array(
-            array("stock"=>"123456","quantity"=>"100","price"=>"87.6",
-                  "cost"=>"8530","balance"=>"2.3"),
-            array("stock"=>"123457","quantity"=>"100","price"=>"866",
-                  "cost"=>"8420","balance"=>"2.2")
-        );
-        $data['own_stock'] = $own_stock;
-        $this->load->view("neon/query-own-stock.html", $data);
+        if($this->user_model->hasStockAccount($this->session->username))
+        {
+        	$own_stock = $this->user_model->stockAccountQuery($this->session->username);
+        	//持有股票信息
+	        // $own_stock = array(
+	        //     array("stock"=>"123456","quantity"=>"100","price"=>"87.6",
+	        //           "cost"=>"8530","balance"=>"2.3"),
+	        //     array("stock"=>"123457","quantity"=>"100","price"=>"866",
+	        //           "cost"=>"8420","balance"=>"2.2")
+	        // );
+	        $data['own_stock'] = $own_stock;
+	        $this->load->view("neon/query-own-stock.html", $data);
+        }
+        else
+        {
+        	$own_stock = 0;
+        	$data['own_stock'] = $own_stock;
+        	$this->load->view("neon/query-own-stock.html", $data);
+        }
+
     }
 
     //购买股票
@@ -371,6 +394,23 @@ class User extends CI_Controller
             return FALSE;
         }
         return TRUE;
+    }
+
+    // 查询股票时，确认取票存在
+    public function stockExist_check($str)
+    {
+    	if (strlen($str) == 0)
+        {
+            $this->form_validation->set_message('stockExist_check', '股票代码不能为空');
+            return FALSE;
+        }
+    	if (!$this->user_model->stockExist($str))
+    	{
+    		$this->form_validation->set_message('stockExist_check', '股票不存在');
+    		return FALSE;
+    	}
+    	else
+    		return TRUE;
     }
 
     /*

@@ -60,7 +60,8 @@ class User_model extends CI_Model
      */
     public function crypt($str, $salt=null)
     {
-        if($salt == null){
+        if($salt == null)
+        {
             $salt = $this->salt;
         }
         return crypt($str, $salt);
@@ -137,7 +138,8 @@ class User_model extends CI_Model
      * @return bool true：success， false： failed
      * 绑定资金账户
      */
-    public function bindAccount($username, $account, $password){
+    public function bindAccount($username, $account, $password)
+    {
     	$sql = "UPDATE LoginUser SET account = ? WHERE user = ?";
     	$query = $this->db->query($sql, array($account, $username));
     	return $query;
@@ -159,5 +161,98 @@ class User_model extends CI_Model
     	}
     	else
     		return false;
+    }
+
+    /**
+     * @param $id
+     * @return bool true：存在， false：不存在
+     * 是否存在$id对应的股票信息
+     */
+    public function stockExist($id)
+    {
+        $sql = "SELECT * FROM Stock WHERE stockId = ?";
+        return $this->db->query($sql, array($id))->num_rows() > 0;
+    }
+
+    /**
+     * @param $id
+     * @return 股票信息
+     * 查询股票
+     */
+    public function stockQuery($id)
+    {
+        $sql = "SELECT * FROM Stock WHERE stockId = ?";
+        $query = $this->db->query($sql,array($id));
+        return $query->row();
+    }
+
+    /**
+     * @param $id
+     * @return 股票信息 true：已绑定，false：未绑定
+     * 是否已绑定资金账户
+     */
+    public function hasFundAccount($username)
+    {
+        $sql = "SELECT * FROM LoginUser WHERE user = ? AND account is not null";
+        return $this->db->query($sql, array($username))->num_rows() != 0;
+    }
+
+    /**
+     * @param $id
+     * @return 股票信息
+     * 查询绑定资金账户的资金信息
+     */
+    public function fundAccountQuery($username)
+    {
+        $sql = "SELECT * FROM LoginUser WHERE user = ? AND account is not null";
+        $row =  $this->db->query($sql, array($username))->row();
+        $sql = "SELECT * FROM PerFundAccount WHERE accountId = ?";
+        return $this->db->query($sql, array($row->account))->row();
+    }
+
+    /**
+     * @param $id
+     * @return true：已绑定，false：未绑定
+     * 是否有股票账户
+     */
+    public function hasStockAccount($username)
+    {
+        $sql = "SELECT * FROM LoginUser WHERE user = ? AND account is not null";
+        $query = $this->db->query($sql, array($username));
+        if ($query->num_rows() == 0)
+            return false;
+        $sql = "SELECT * FROM PerFundAccount WHERE accountId = ? AND stockAccountId is not null";
+        $q = $this->db->query($sql, array($query->row()->account));
+        if($q->num_rows() == 0)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @param $id
+     * @return 已有股票信息
+     * 查询绑定资金账户的资金信息
+     */
+    public function stockAccountQuery($username)
+    {
+        $a = array();
+        $sql = "SELECT * FROM LoginUser WHERE user = ? AND account is not null";
+        $row1 =  $this->db->query($sql, array($username))->row();
+
+        $sql = "SELECT * FROM PerFundAccount WHERE accountId = ? AND stockAccountId is not null";
+        $row2 = $this->db->query($sql, array($row1->account))->row();
+
+        $sql = "SELECT * FROM StockHold WHERE account = ?";
+        $query = $this->db->query($sql, array($row2->stockAccountId));
+        foreach ($query->result() as $row)
+        {
+            $sql = "SELECT * FROM Stock WHERE stockId = ?";
+            $r = $this->db->query($sql, array($row->stock))->row();
+            $a[] = array("stock"=>$row->stock, "quantity"=>$row->quantity, "price"=>$r->latestPrice,
+                      "cost"=>$row->cost, "balance" => ($row->quantity * $r->latestPrice - $row->cost) );
+        }
+        return $a;
     }
 }
