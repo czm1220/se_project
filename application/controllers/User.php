@@ -208,7 +208,7 @@ class User extends CI_Controller
         {
         	$row = $this->user_model->fundAccountQuery($this->session->username);
         	//资金账户信息
-        	$fund = array("accountId"=>$this->session->accountId,"balanceOfAccount"=>$row->balanceOfAccount,
+        	$fund = array("accountId"=>$row->accountId,"balanceOfAccount"=>$row->balanceOfAccount,
         		"availableBalance"=>$row->balanceOfAccount-$row->frozenBalance, "frozenBalance"=>$row->frozenBalance);
        	 	$data['fund'] = $fund;
         	$this->load->view("neon/query-money.html", $data);
@@ -240,8 +240,7 @@ class User extends CI_Controller
         }
         else
         {
-        	$own_stock = 0;
-        	$data['own_stock'] = $own_stock;
+        	$data['own_stock'] = 0;
         	$this->load->view("neon/query-own-stock.html", $data);
         }
 
