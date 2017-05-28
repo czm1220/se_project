@@ -240,7 +240,7 @@ class User extends CI_Controller
         }
         else
         {
-        	$data['own_stock'] = 0;
+        	$data['own_stock'] = array();
         	$this->load->view("neon/query-own-stock.html", $data);
         }
 
