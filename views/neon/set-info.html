@@ -198,19 +198,21 @@
             </li>
         </ol>
         <h2>绑定资金账户</h2>
-        <div class="panel-body" style = "margin-left:30px;">	
+        <div class="panel-body" style = "margin-left:30px;">
+            <?php if($bind == FALSE):?>
             <div class="row">
                 <div class="middle-align">当前尚未绑定任何资金账户
                     <a href="bind_fund">[绑定]</a>
                 </div>
             </div>
-            </br>
-            <div class="row">
-                <div class="middle-align">当前绑定的资金账户：
+            <?php else:?>
+            <div class="row" style = "visibility:<?php if ($bind == TRUE): echo 'visible'; else: echo 'hidden'; endif; ?>">
+                <div class="middle-align">当前绑定的资金账户：<?php echo $fund_account; ?>
                     <a href="bind_fund">[修改]</a>
                     <a href="unbind_fund" onclick="">[解绑]</a>
                 </div>
             </div>
+            <?php endif;?>            
          </div>
         <hr />
         <h2>修改密码</h2>

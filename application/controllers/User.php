@@ -96,7 +96,16 @@ class User extends CI_Controller
 
         if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view('neon/set-info.html');
+            if($this->user_model->hasFundAccount($this->session->username)){
+                $data['bind'] = TRUE;
+                $data['fund_account'] = $this->user_model->bindFundAccountQuery($this->session->username)->account;
+                
+            }
+            else{
+                $data['bind'] = FALSE;
+            }
+                
+            $this->load->view('neon/set-info.html',$data);
         }
         else
         {

@@ -185,6 +185,17 @@ class User_model extends CI_Model
         $query = $this->db->query($sql,array($id));
         return $query->row();
     }
+    
+     /**
+     * @param $id
+     * @return 股票信息 true：已绑定，false：未绑定
+     * 查询绑定的资金账户
+     */
+    public function bindFundAccountQuery($username)
+    {
+        $sql = "SELECT * FROM LoginUser WHERE user = ? AND account is not null";
+        return $this->db->query($sql, array($username))->row();
+    }
 
     /**
      * @param $id
