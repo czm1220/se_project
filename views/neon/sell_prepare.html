@@ -197,33 +197,14 @@
         <h2>出售股票</h2>
         </br>
         
-        <?php if($load_sell == false):?>
+
         <div class="panel-body">						
-            <form method = "post" role="form" class="form-horizontal form-groups">
-                <div class="form-group">
-                    <label for="sell_stock" class="col-sm-3 control-label">股票代码</label>
-                    
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id ="sell_stock" name ="sell_stock" placeholder="">
-                    </div>
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-info">查询</button>
-                    </span>
-                    </br>
-                    <div class="col-sm-offset-3 col-sm-3">
-                        <div style = "color:red;text-align:center"><?php echo form_error('sell_stock'); ?></div>
-                    </div>
-                </div>                                                                                      
-            </form>
-        </div>
-        <?php else:?>
-        <div class="panel-body">						
-            <form method = "post" role="form" class="form-horizontal form-groups" action = "sell_check">
+            <form role="form" class="form-horizontal form-groups">
                 <div class="form-group">
                     <label for="password_old" class="col-sm-3 control-label">股票代码</label>
                     
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id ="sell_stock" name ="sell_stock"  value="<?php echo $stockid;?>" readonly>
+                        <input type="text" class="form-control" id ="sell_stock" name ="sell_stock"  placeholder="">
                     </div>
                 </div>                         
                 
@@ -268,7 +249,6 @@
                 </div>
             </form>
         </div>
-        <?php endif;?>
 		<!-- lets do some work here... -->
 		<!-- Footer -->
 		<!--footer class="main">

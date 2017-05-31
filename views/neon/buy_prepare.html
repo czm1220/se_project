@@ -8,7 +8,7 @@
 	<meta name="description" content="Neon Admin Panel" />
 	<meta name="author" content="" />
 
-	<title>出售股票</title>
+	<title>购买股票</title>
 
 	<link rel="stylesheet" href="../../assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="../../assets/css/font-icons/entypo/css/entypo.css">
@@ -191,63 +191,44 @@
                 <a href="index"><i class="fa-home"></i>主页</a>
             </li>
             <li class="active">
-                <strong>出售股票</strong>
+                <strong>购买股票</strong>
             </li>
         </ol>
-        <h2>出售股票</h2>
+        <h2>购买股票</h2>
         </br>
         
-        <?php if($load_sell == false):?>
+
         <div class="panel-body">						
             <form method = "post" role="form" class="form-horizontal form-groups">
-                <div class="form-group">
-                    <label for="sell_stock" class="col-sm-3 control-label">股票代码</label>
-                    
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id ="sell_stock" name ="sell_stock" placeholder="">
-                    </div>
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-info">查询</button>
-                    </span>
-                    </br>
-                    <div class="col-sm-offset-3 col-sm-3">
-                        <div style = "color:red;text-align:center"><?php echo form_error('sell_stock'); ?></div>
-                    </div>
-                </div>                                                                                      
-            </form>
-        </div>
-        <?php else:?>
-        <div class="panel-body">						
-            <form method = "post" role="form" class="form-horizontal form-groups" action = "sell_check">
                 <div class="form-group">
                     <label for="password_old" class="col-sm-3 control-label">股票代码</label>
                     
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id ="sell_stock" name ="sell_stock"  value="<?php echo $stockid;?>" readonly>
+                        <input type="text" class="form-control" id ="buy_stock" name ="buy_stock" placeholder="">
                     </div>
                 </div>                         
                 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">卖出价格</label>
+                    <label class="col-sm-3 control-label">买入价格</label>
                     
                     <div class="col-sm-5">
                     
                         <div class="input-spinner">
                             <button type="button" class="btn btn-info">-</button>
-                            <input type="text" class="form-control size-1"  id ="sell_price" name ="sell_price" value="<?php echo $recommend_price;?>" data-min="0"/>
+                            <input type="text" class="form-control size-1" id ="buy_price" name ="buy_price" value="<?php echo $recommend_price;?>" data-min="0"/>
                             <button type="button" class="btn btn-info">+</button>
                         </div>
                         
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">卖出数量</label>
+                    <label class="col-sm-3 control-label">买入数量</label>
                     
                     <div class="col-sm-5">
                     
                         <div class="input-spinner">
                             <button type="button" class="btn btn-info">-</button>
-                            <input type="text" class="form-control size-1" id ="sell_quantity" name ="sell_quantity" value="1" data-min="0" data-max="<?php echo $maximum_quantity;?>"/>
+                            <input type="text" class="form-control size-1" id ="buy_quantity" name ="buy_quantity" value="1" data-min="0" data-max="<?php echo $maximum_quantity;?>"/>
                             <button type="button" class="btn btn-info">+</button>
                         </div>
                         
@@ -256,19 +237,18 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">支付密码</label>
                     <div class="col-sm-3">                   
-                        <input type="password" class="form-control" id ="sell_password" name ="sell_password" data-mask="999999" data-numeric="true" data-numeric-align="right" placeholder="" />
+                        <input type="password" class="form-control" id ="buy_password" name ="buy_password" data-mask="999999" data-numeric="true" data-numeric-align="right" placeholder="" />
                         <br />    
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-5">
                         <button type="reset" class="btn btn-info">重置</button>
-                        <button type="submit" class="btn btn-info">确认卖出</button>
+                        <button type="submit" class="btn btn-info">确认买入</button>
                     </div>
                 </div>
             </form>
         </div>
-        <?php endif;?>
 		<!-- lets do some work here... -->
 		<!-- Footer -->
 		<!--footer class="main">
