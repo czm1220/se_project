@@ -185,7 +185,7 @@ class User_model extends CI_Model
         $query = $this->db->query($sql,array($id));
         return $query->row();
     }
-    
+
      /**
      * @param $id
      * @return 股票信息 true：已绑定，false：未绑定
@@ -244,7 +244,7 @@ class User_model extends CI_Model
     /**
      * @param $id
      * @return 已有股票信息
-     * 查询绑定资金账户的资金信息
+     * 查询绑定资金账户的股票信息
      */
     public function stockAccountQuery($username)
     {
@@ -266,4 +266,53 @@ class User_model extends CI_Model
         }
         return $a;
     }
+
+    /**
+     * @return instruction
+     * 查询买卖股票的交易指令记录
+     */
+    public function instructionQuery($username)
+    {
+        $a = array();
+        $sql = "SELECT * FROM LoginUser WHERE user = ? AND account is not null";
+        $row1 =  $this->db->query($sql, array($username))->row();
+
+        $sql = "SELECT * FROM PerFundAccount WHERE accountId = ? AND stockAccountId is not null";
+        $row2 = $this->db->query($sql, array($row1->account))->row();
+
+        $sql = "SELECT * FROM Instruction where account = ?";
+        $query =  $this->db->query($sql, array($row2->stockAccountId));
+        foreach ($query->result() as $row)
+        {
+            $a[] = array("stock"=>$row->stock,"buyOrSell"=>$row->buyOrSell,"price"=>$row->price,
+                  "quantity"=>$row->quantity,"time"=>$row->time, "state"=>$row->state);
+        }
+        return $a;
+    }
+
+    /**
+     * @param $username, $stockId
+     * @return 拥有卖股票时可以卖出的股票的最大数量
+     * 查询持有股票数量
+     */
+    public function quantityOfStockSell($username, $stockId)
+    {
+        $sql = "SELECT * FROM LoginUser WHERE user = ? AND account is not null";
+        $row1 =  $this->db->query($sql, array($username))->row();
+
+        $sql = "SELECT * FROM PerFundAccount WHERE accountId = ? AND stockAccountId is not null";
+        $row2 = $this->db->query($sql, array($row1->account))->row();
+
+        $sql = "SELECT * FROM StockHold WHERE account = ? and stock = $stockId";
+        $query = $this->db->query($sql, array($row2->stockAccountId));
+        if ($query->num_rows() > 0)
+        {
+            return $query->row()->quantity;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
 }

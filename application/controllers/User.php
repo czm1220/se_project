@@ -99,12 +99,12 @@ class User extends CI_Controller
             if($this->user_model->hasFundAccount($this->session->username)){
                 $data['bind'] = TRUE;
                 $data['fund_account'] = $this->user_model->bindFundAccountQuery($this->session->username)->account;
-                
+
             }
             else{
                 $data['bind'] = FALSE;
             }
-                
+
             $this->load->view('neon/set-info.html',$data);
         }
         else
@@ -266,42 +266,53 @@ class User extends CI_Controller
             $this->load->view("neon/buy.html",$data);
         }
         else
-        {            
+        {
             $data['load_buy'] = true;
             $stockid = $this->input->post("buy_stock");
 
             $row = $this->user_model->stockQuery($stockid);
-            
+
             $data['stockid'] = $stockid;
-            $data['recommend_price'] = $row->latestPrice;           
-            
+            $data['recommend_price'] = $row->latestPrice;
+
             //可购买的最大数量（资金账户中(balanceOfAccount - frozenBalance)/$row->latestPrice）
-            //$data['maximum_quantity'] = ...;
-            $data['maximum_quantity'] = "2";
+            $fund = $this->user_model->fundAccountQuery($this->session->username);
+            $data['maximum_quantity'] = ($fund->balanceOfAccount - $fund->frozenBalance) / $row->latestPrice;
 
             $this->load->view("neon/buy.html",$data);
-            
+			// 暂时显示出来
+            // echo $data['maximum_quantity'];
+
             //如果在界面中点击确认买入按钮会跳转至buy_check()，buy_check()用于检查交易密码是否正确并给第4组发送买指令
         }
-        
-        
-    }
-    
-     public function buy_check(){
-         $stockid = $this->input->post("buy_stock");
-         $buy_price = $this->input->post("buy_price");
-         $buy_quantity = $this->input->post("buy_quantity");
-         $buy_password = $this->input->post("buy_password");
 
-         //读取资金账户的密码并判断与$buy_password是否一致
-         //......
-     
-         $this->load->view("neon/home-page.html");
-     }
+
+    }
+
+    public function buy_check(){
+    	$this->form_validation->set_rules('buy_password', '买入密码', 'callback_buy_sell_pwd_check');
+        $stockid = $this->input->post("buy_stock");
+        $buy_price = $this->input->post("buy_price");
+        $buy_quantity = $this->input->post("buy_quantity");
+        $buy_password = $this->input->post("buy_password");
+
+    	//读取资金账户的密码并判断与$buy_password是否一致
+        if ($this->form_validation->run() == FALSE)
+        {
+        	// 不一致
+        	$this->load->view("neon/home-page.html");
+        	echo 0;
+        }
+        else
+        {
+        	$this->load->view("neon/home-page.html");
+        	echo 1;
+        }
+    }
 
     //出售股票
     public function sell()
-    {        
+    {
         $data['load_sell'] = false;
 
 		$this->form_validation->set_rules('sell_stock', '股票代码', 'callback_stockExist_check');
@@ -310,50 +321,66 @@ class User extends CI_Controller
             $this->load->view("neon/sell.html",$data);
         }
         else
-        {            
+        {
             $data['load_sell'] = true;
             $stockid = $this->input->post("sell_stock");
 
             $row = $this->user_model->stockQuery($stockid);
-            
+
             $data['stockid'] = $stockid;
             $data['recommend_price'] = $row->latestPrice;
-                      
-            //可出售的最大数量（用户持有的该股票的股数：stockHold表）
-            //$data['maximum_quantity'] = ...;
-            $data['maximum_quantity'] = "2";
 
+            //可出售的最大数量（用户持有的该股票的股数：stockHold表）
+            $data['maximum_quantity'] = $this->user_model->quantityOfStockSell($this->session->username, $stockid);
             $this->load->view("neon/sell.html",$data);
-            
+			// 暂时显示出来
+            // echo $data['maximum_quantity'];
+
             //如果在界面中点击确认出售按钮会跳转至sell_check()，sell_check()用于检查交易密码是否正确并给第4组发送买指令
         }
 
     }
-    
+
     public function sell_check(){
-         $stockid = $this->input->post("sell_stock");
-         $sell_price = $this->input->post("sell_price");
-         $sell_quantity = $this->input->post("sell_quantity");
-         $sell_password = $this->input->post("sell_password");
-         
-         //读取资金账户的密码并判断与$sell_password是否一致
-         //......
-     
-         $this->load->view("neon/home-page.html");
-     }
+        $this->form_validation->set_rules('sell_password', '卖出密码', 'callback_buy_sell_pwd_check');
+        $stockid = $this->input->post("sell_stock");
+        $sell_price = $this->input->post("sell_price");
+        $sell_quantity = $this->input->post("sell_quantity");
+        $sell_password = $this->input->post("sell_password");
+
+        //读取资金账户的密码并判断与$sell_password是否一致
+        if ($this->form_validation->run() == FALSE)
+        {
+        	// 不一致
+        	$this->load->view("neon/home-page.html");
+        	echo 0;
+        }
+        else
+        {
+        	$this->load->view("neon/home-page.html");
+        	echo 1;
+        }
+    }
 
     //查询买卖记录
     public function query_instruction()
     {
         //数据库查询
-        //......
+        if ($this->user_model->hasStockAccount($this->session->username))
+        {
+        	$instruction = $this->user_model->instructionQuery($this->session->username);
+        }
+        else
+        {
+        	$instruction = array();
+        }
         //买卖指令记录
-        $instruction = array(
-            array("stock"=>"123456","buyOrSell"=>"买入","price"=>"87.6",
-                  "quantity"=>"23","time"=>"2017-5-11 15:32", "state"=>"成功"),
-            array("stock"=>"123457","buyOrSell"=>"卖出","price"=>"86.6",
-                  "quantity"=>"11","time"=>"2017-5-11 15:35", "state"=>"待定")
-        );
+        // $instruction = array(
+        //     array("stock"=>"123456","buyOrSell"=>"买入","price"=>"87.6",
+        //           "quantity"=>"23","time"=>"2017-5-11 15:32", "state"=>"成功"),
+        //     array("stock"=>"123457","buyOrSell"=>"卖出","price"=>"86.6",
+        //           "quantity"=>"11","time"=>"2017-5-11 15:35", "state"=>"待定")
+        // );
         $data['instruction'] = $instruction;
         $this->load->view("neon/query-instruction.html", $data);
     }
@@ -482,8 +509,41 @@ class User extends CI_Controller
     		$this->form_validation->set_message('stockExist_check', '股票不存在');
     		return FALSE;
     	}
+    	if (!$this->user_model->hasFundAccount($this->session->username))
+    	{
+    		$this->form_validation->set_message('stockExist_check', '未绑定资金账户');
+    		return FALSE;
+    	}
     	else
     		return TRUE;
+    }
+
+    //买入卖出是验证资金账户密码
+    public function buy_sell_pwd_check($str)
+    {
+    	if (strlen($str) == 0)
+        {
+            $this->form_validation->set_message('buy_sell_pwd_check', '密码不能为空');
+            return FALSE;
+        }
+    	if($this->user_model->hasFundAccount($this->session->username))
+        {
+        	$row = $this->user_model->fundAccountQuery($this->session->username);
+        	if($this->user_model->validateFundAccount($row->accountId, $str))
+        	{
+        		return TRUE;
+        	}
+        	else
+        	{
+        		$this->form_validation->set_message('buy_sell_pwd_check', '密码错误');
+            return FALSE;
+        	}
+        }
+        else
+        {
+        	$this->form_validation->set_message('buy_sell_pwd_check', '未绑定资金账户');
+            return FALSE;
+        }
     }
 
     /*
