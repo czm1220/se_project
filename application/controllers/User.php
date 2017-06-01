@@ -66,7 +66,7 @@ class User extends CI_Controller
         $this->form_validation->set_rules('username', '用户名', 'callback_username_check');
         $this->form_validation->set_rules('password', 'password', 'trim|callback_password_check');
         $this->form_validation->set_rules('password2', 'password2', 'required|matches[password]',
-            array('required' => '两次输入的密码不一致', 'matches' => '两次输入的密码不一致'));
+            array('required' => '确认密码不能为空', 'matches' => '两次输入的密码不一致'));
 
         //如果输入的用户名或密码不合法
         if ($this->form_validation->run() == FALSE)
