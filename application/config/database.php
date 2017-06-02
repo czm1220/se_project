@@ -99,7 +99,7 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '123456',
+	'password' => '',
 	'database' => 'se_project',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -115,5 +115,5 @@ $db['default'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE,
-	'port' => 3307
+	'port' => 3306
 );

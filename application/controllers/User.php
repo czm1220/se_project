@@ -119,7 +119,7 @@ class User extends CI_Controller
             if ($this->user_model->changePasswd($this->session->username, $password_old, $password_new))
             {
                 //加载成功修改界面
-                $this->load->view('neon/change-password-success.html');
+                $this->load->view('neon/change-success.html');
             }
             else
             {
@@ -149,7 +149,7 @@ class User extends CI_Controller
             if($this->user_model->bindAccount($this->session->username, $fund_account, $fund_password))
             {
                 //加载成功修改界面
-                $this->load->view('neon/change-password-success.html');
+                $this->load->view('neon/change-success.html');
             }
             else
             {
@@ -165,7 +165,7 @@ class User extends CI_Controller
         if($this->user_model->unBindAccount($this->session->username))
         {
         	//加载成功修改界面
-            $this->load->view('neon/change-password-success.html');
+            $this->load->view('neon/change-success.html');
         }
         else
         {
@@ -277,7 +277,7 @@ class User extends CI_Controller
 
             //可购买的最大数量（资金账户中(balanceOfAccount - frozenBalance)/$row->latestPrice）
             $fund = $this->user_model->fundAccountQuery($this->session->username);
-            $data['maximum_quantity'] = ($fund->balanceOfAccount - $fund->frozenBalance) / $row->latestPrice;
+            $data['maximum_quantity'] = floor(($fund->balanceOfAccount - $fund->frozenBalance) / $row->latestPrice);
 
             $this->load->view("neon/buy.html",$data);
 			// 暂时显示出来
@@ -297,15 +297,15 @@ class User extends CI_Controller
         $buy_password = $this->input->post("buy_password");
 
     	//读取资金账户的密码并判断与$buy_password是否一致
-        if ($this->form_validation->run() == FALSE)
+        if ($this->form_validation->run() == FALSE || $buy_quantity <= 0)
         {
         	// 不一致
-        	$this->load->view("neon/home-page.html");
+        	$this->load->view("neon/change-fail.html");
         	echo 0;
         }
         else
         {
-        	$this->load->view("neon/home-page.html");
+        	$this->load->view("neon/change-success.html");
         	echo 1;
         }
     }
@@ -349,15 +349,15 @@ class User extends CI_Controller
         $sell_password = $this->input->post("sell_password");
 
         //读取资金账户的密码并判断与$sell_password是否一致
-        if ($this->form_validation->run() == FALSE)
+        if ($this->form_validation->run() == FALSE || $sell_quantity <= 0)
         {
         	// 不一致
-        	$this->load->view("neon/home-page.html");
+        	$this->load->view("neon/change-fail.html");
         	echo 0;
         }
         else
         {
-        	$this->load->view("neon/home-page.html");
+        	$this->load->view("neon/change-success.html");
         	echo 1;
         }
     }
