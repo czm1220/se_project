@@ -33,9 +33,7 @@ class User extends CI_Controller
         //用户名和密码均合法
         else
         {
-            //得到用户输入的用户名
             $username  = $this->input->post("username");
-            //利用用户名及密码检查用户是否存在：数据库操作
             if ($this->user_model->validate($username, $this->input->post("password")))
             {
                 // 成功登陆
@@ -93,7 +91,8 @@ class User extends CI_Controller
             array('required' => '{field}不能为空','max_length' => '密码应为6~20位','min_length' => '密码应为6~20位'));
         $this->form_validation->set_rules('password_confirm', '新密码确认', 'required|matches[password_new]',
             array('required' => '{field}不能为空','matches' => '两次输入的密码不一致'));
-
+        
+        //如果密码不合法
         if ($this->form_validation->run() == FALSE)
         {
             if($this->user_model->hasFundAccount($this->session->username)){
@@ -107,20 +106,20 @@ class User extends CI_Controller
 
             $this->load->view('neon/set-info.html',$data);
         }
+        //如果密码合法
         else
         {
-             //从view拿到的原密码
             $password_old = $this->input->post("password_old");
-            //从view拿到的新密码
             $password_new = $this->input->post("password_new");
              //从view拿到的新密码的确认
             // $password_confirm = $this->input->post("password_confirm");
-            //修改数据库密码
+            //修改数据库密码成功
             if ($this->user_model->changePasswd($this->session->username, $password_old, $password_new))
             {
                 //加载成功修改界面
                 $this->load->view('neon/change-success.html');
             }
+            //修改数据库密码失败
             else
             {
                 $this->load->view('neon/set-info.html');
@@ -134,16 +133,16 @@ class User extends CI_Controller
         $this->form_validation->set_rules('fund_account', '资金账户', 'callback_fundAccount_check');
         $this->session->set_userdata("accountId", $this->input->post('fund_account'));
         $this->form_validation->set_rules('fund_password', '密码', 'callback_fundAccount_valid');
-
+        
+        //输入不合法
         if ($this->form_validation->run() == FALSE)
         {
             $this->load->view("neon/bind-fund.html");
         }
+        //输入合法
         else
         {
-            //从view拿到的资金账号
             $fund_account = $this->input->post("fund_account");
-            //从view拿到的资金账号密码
             $fund_password = $this->input->post("fund_password");
             //添加账号
             if($this->user_model->bindAccount($this->session->username, $fund_account, $fund_password))
@@ -261,6 +260,7 @@ class User extends CI_Controller
         $data['load_buy'] = false;
 
 		$this->form_validation->set_rules('buy_stock', '股票代码', 'callback_stockExist_check');
+        //输入的股票代码不合法
         if ($this->form_validation->run() == FALSE)
         {
             $this->load->view("neon/buy.html",$data);
