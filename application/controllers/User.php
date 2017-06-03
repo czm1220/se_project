@@ -91,7 +91,7 @@ class User extends CI_Controller
             array('required' => '{field}不能为空','max_length' => '密码应为6~20位','min_length' => '密码应为6~20位'));
         $this->form_validation->set_rules('password_confirm', '新密码确认', 'required|matches[password_new]',
             array('required' => '{field}不能为空','matches' => '两次输入的密码不一致'));
-        
+
         //如果密码不合法
         if ($this->form_validation->run() == FALSE)
         {
@@ -133,7 +133,7 @@ class User extends CI_Controller
         $this->form_validation->set_rules('fund_account', '资金账户', 'callback_fundAccount_check');
         $this->session->set_userdata("accountId", $this->input->post('fund_account'));
         $this->form_validation->set_rules('fund_password', '密码', 'callback_fundAccount_valid');
-        
+
         //输入不合法
         if ($this->form_validation->run() == FALSE)
         {
@@ -182,7 +182,7 @@ class User extends CI_Controller
         //输入的股票代码合法性检查
         // $this->form_validation->set_rules('stockid', '股票代码', 'required',
         //     array('required' => '{field}不能为空', 'is_unique' => '股票代码不存在'));
-		$this->form_validation->set_rules('stockid', '股票代码', 'callback_stockExist_check');
+		$this->form_validation->set_rules('stockid', '股票代码', 'callback_stock_check');
 
         if ($this->form_validation->run() == FALSE)
         {
@@ -497,6 +497,23 @@ class User extends CI_Controller
     }
 
     // 查询股票时，确认取票存在
+    public function stock_check($str)
+    {
+    	if (strlen($str) == 0)
+        {
+            $this->form_validation->set_message('stock_check', '股票代码不能为空');
+            return FALSE;
+        }
+    	if (!$this->user_model->stockExist($str))
+    	{
+    		$this->form_validation->set_message('stock_check', '股票不存在');
+    		return FALSE;
+    	}
+    	else
+    		return TRUE;
+    }
+
+    // 买卖股票是，确认股票存在
     public function stockExist_check($str)
     {
     	if (strlen($str) == 0)
