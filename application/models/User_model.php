@@ -312,7 +312,7 @@ class User_model extends CI_Model
         foreach ($query->result() as $row)
         {
             // 将指令信息放入返回数组
-            $a[] = array("stock"=>$row->stock,"buyOrSell"=>$row->buyOrSell,"price"=>$row->price,
+            $a[] = array("id"=>$row->id,"stock"=>$row->stock,"buyOrSell"=>$row->buyOrSell,"price"=>$row->price,
                   "quantity"=>$row->quantity,"time"=>$row->time, "state"=>$row->state);
         }
         return $a;

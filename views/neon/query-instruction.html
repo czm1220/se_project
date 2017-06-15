@@ -212,18 +212,25 @@
 			</thead>
 			<tbody>
                 <?php foreach ($instruction as $instruction_item):?>
-				<tr class="odd gradeX">
-					<td class="center"><?php echo $instruction_item['stock'];?></td>
-					<td class="center"><?php echo $instruction_item['buyOrSell'];?></td>
-					<td class="center"><?php echo $instruction_item['price'];?></td>
-					<td class="center"><?php echo $instruction_item['quantity'];?></td>
-                    <td class="center"><?php echo $instruction_item['time'];?></td>
-                    <td class="center"><?php echo $instruction_item['state'];?></td>
-                    <td class="center">
-                        <div class="col-sm-3">
-                            <button type="submit" class="btn btn-info">撤销</button>
-                        </div>
-                    </td>
+                <tr class="odd gradeX">
+                    <form method = "post" role="form" class="form-horizontal form-groups" action = "cancel">
+                    
+                        <td class="center"><?php echo $instruction_item['stock'];?></td>
+                        <td class="center"><?php if($instruction_item['buyOrSell'] ==0)  echo "买入";
+                                                else if($instruction_item['buyOrSell'] ==1)  echo "卖出";?></td>
+                        <td class="center"><?php echo $instruction_item['price'];?></td>
+                        <td class="center"><?php echo $instruction_item['quantity'];?></td>
+                        <td class="center"><?php echo $instruction_item['time'];?></td>
+                        <td class="center"><?php if ($instruction_item['state'] == 0) echo "待定";
+                                                 else if($instruction_item['state'] == 1) echo "成功";
+                                                 else if($instruction_item['state'] == 2) echo "撤销";?></td>
+                        <td class="center">
+                        <input type="text" id = "id" name = "id" value="<?php echo $instruction_item['id'];?>" style = "visibility:collapse"> 
+                            <div class="col-sm-3">
+                                <button type="submit"  <?php if($instruction_item['state'] != 0): echo "disabled=\"disabled\""; endif;?>class="btn btn-info">撤销</button>
+                            </div>
+                        </td>
+                    </form>
 				</tr>
                 <?php endforeach; ?>
             </tbody>
