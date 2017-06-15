@@ -561,8 +561,9 @@ class User extends CI_Controller
         }
         else
         {
-        	$url = 'http://123.206.109.122:3000/instruction'; // 由第四组决定
-            //$url = "";
+        	//给中央交易系统发送购买股票指令
+            $url = 'http://123.206.109.122:3000/instruction'; // 由第四组决定
+
 			$jsonStr = json_encode(array(
 				'account' => $this->session->accountId,
 				'buyOrSell' => 0,
@@ -662,7 +663,8 @@ class User extends CI_Controller
         }
         else
         {
-        	$url = 'http://123.206.109.122:3000/instruction'; // 由第四组决定
+        	//给中央交易系统发送出售股票指令
+            $url = 'http://123.206.109.122:3000/instruction'; // 由第四组决定
 			$jsonStr = json_encode(array(
 				'account' => $this->session->accountId,
 				'buyOrSell' => 1,
@@ -724,6 +726,7 @@ class User extends CI_Controller
     
     public function cancel()
     {
+        //给中央交易系统发送撤销指令
         $instrID = $this->input->post("id");
         echo $instrID;
         
