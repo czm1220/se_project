@@ -527,7 +527,33 @@ class User extends CI_Controller
         }
         else
         {
-        	// 一致则加载操作成功界面
+        	$url = '/instruction'; // 由第四组决定
+ +			$jsonStr = json_encode(array(
+ +				'account' => $this->session->accountId,
+ +				'buyOrSell' => 'buy',
+ +				'stock' => $stockid,
+ +				'price' => $buy_price,
+ +				'quantity' => $buy_quantity
+ +				));
+ +			
+ +			$ch = curl_init();  
+ +			curl_setopt($ch, CURLOPT_POST, 1);  
+ +			curl_setopt($ch, CURLOPT_URL, $url);  
+ +			curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonStr);  
+ +			curl_setopt($ch, CURLOPT_HTTPHEADER, array(  
+ +				'Content-Type: application/json; charset=utf-8',  
+ +				'Content-Length: ' . strlen($jsonStr))  
+ +			);  
+ +			ob_start();  
+ +			curl_exec($ch);  
+ +			$return_content = ob_get_contents();  
+ +			ob_end_clean();  
+ +			$return_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+ +			
+ +			echo $return_content;
+ +			echo $return_code; // 0:失败, 200~209:成功
+ 
+            // 一致则加载操作成功界面
         	$this->load->view("neon/change-success.html");
         }
     }
@@ -593,7 +619,32 @@ class User extends CI_Controller
         }
         else
         {
-        	// 一致则加载操作成功界面
+        	$url = '/destroy'; // 由第四组决定
+ +			$jsonStr = json_encode(array(
+ +				'account' => $this->session->accountId,
+ +				'buyOrSell' => 'sell',
+ +				'stock' => $stockid,
+ +				'price' => $sell_price,
+ +				'quantity' => $sell_quantity
+ +				));
+ +			
+ +			$ch = curl_init();  
+ +			curl_setopt($ch, CURLOPT_POST, 1);  
+ +			curl_setopt($ch, CURLOPT_URL, $url);  
+ +			curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonStr);  
+ +			curl_setopt($ch, CURLOPT_HTTPHEADER, array(  
+ +				'Content-Type: application/json; charset=utf-8',  
+ +				'Content-Length: ' . strlen($jsonStr))  
+ +			);  
+ +			ob_start();  
+ +			curl_exec($ch);  
+ +			$return_content = ob_get_contents();  
+ +			ob_end_clean();  
+ +			$return_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+ +			
+ +			echo $return_content;
+ +			echo $return_code; // 0:失败, 200~209:成功
+            // 一致则加载操作成功界面
         	$this->load->view("neon/change-success.html");
         }
     }
