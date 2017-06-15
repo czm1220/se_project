@@ -179,46 +179,50 @@ class User extends CI_Controller
          * 密码不合法：为空、不由6~20个字符组成
          * 第二次密码不合法：为空、两次密码不一致
          */
-        $this->form_validation->set_rules('password_old', '原密码', 'callback_pwd_correct_check');
-        $this->form_validation->set_rules('password_new', '新密码', 'required|min_length[6]|max_length[20]',
-            array('required' => '{field}不能为空','max_length' => '密码应为6~20位','min_length' => '密码应为6~20位'));
-        $this->form_validation->set_rules('password_confirm', '新密码确认', 'required|matches[password_new]',
-            array('required' => '{field}不能为空','matches' => '两次输入的密码不一致'));
+        if(isset($this->session->username)){
+            $this->form_validation->set_rules('password_old', '原密码', 'callback_pwd_correct_check');
+            $this->form_validation->set_rules('password_new', '新密码', 'required|min_length[6]|max_length[20]',
+                array('required' => '{field}不能为空','max_length' => '密码应为6~20位','min_length' => '密码应为6~20位'));
+            $this->form_validation->set_rules('password_confirm', '新密码确认', 'required|matches[password_new]',
+                array('required' => '{field}不能为空','matches' => '两次输入的密码不一致'));
 
-        /**
-         * 如果输入的原密码、新密码、第二次密码不合法，则重新加载账户设置界面
-         *     显示原密码、新密码、第二次密码不合法的提示信息
-         * 如果输入的用户名、密码、第二次密码合法，则向数据库之中修改帐号对应的密码
-         */
-        if ($this->form_validation->run() == FALSE)
-        {
-            if($this->user_model->hasFundAccount($this->session->username)){
-                $data['bind'] = TRUE;
-                $data['fund_account'] = $this->user_model->bindFundAccountQuery($this->session->username)->account;
-
-            }
-            else{
-                $data['bind'] = FALSE;
-            }
-
-            $this->load->view('neon/set-info.html',$data);
-        }
-        //如果密码合法
-        else
-        {
-            $password_old = $this->input->post("password_old");
-            $password_new = $this->input->post("password_new");
-            // 修改数据库密码
-            if ($this->user_model->changePasswd($this->session->username, $password_old, $password_new))
+            /**
+             * 如果输入的原密码、新密码、第二次密码不合法，则重新加载账户设置界面
+             *     显示原密码、新密码、第二次密码不合法的提示信息
+             * 如果输入的用户名、密码、第二次密码合法，则向数据库之中修改帐号对应的密码
+             */
+            if ($this->form_validation->run() == FALSE)
             {
-                // 修改成功，加载成功修改界面
-                $this->load->view('neon/change-success.html');
+                if($this->user_model->hasFundAccount($this->session->username)){
+                    $data['bind'] = TRUE;
+                    $data['fund_account'] = $this->user_model->bindFundAccountQuery($this->session->username)->account;
+
+                }
+                else{
+                    $data['bind'] = FALSE;
+                }
+                $this->load->view('neon/set-info.html',$data);
             }
+            //如果密码合法
             else
             {
-            	// 修改失败，重新加载账户设置界面
-                $this->load->view('neon/set-info.html');
+                $password_old = $this->input->post("password_old");
+                $password_new = $this->input->post("password_new");
+                // 修改数据库密码
+                if ($this->user_model->changePasswd($this->session->username, $password_old, $password_new))
+                {
+                    // 修改成功，加载成功修改界面
+                    $this->load->view('neon/change-success.html');
+                }
+                else
+                {
+                    // 修改失败，重新加载账户设置界面
+                    $this->load->view('neon/set-info.html');
+                }
             }
+        }
+        else{
+            redirect('login');
         }
     }
 
@@ -252,33 +256,38 @@ class User extends CI_Controller
          * 资金账户不合法：为空、不存在、已被绑定
          * 密码不合法：为空、错误
          */
-        $this->form_validation->set_rules('fund_account', '资金账户', 'callback_fundAccount_check');
-        $this->session->set_userdata("accountId", $this->input->post('fund_account'));
-        $this->form_validation->set_rules('fund_password', '密码', 'callback_fundAccount_valid');
+        if(isset($this->session->username)){
+            $this->form_validation->set_rules('fund_account', '资金账户', 'callback_fundAccount_check');
+            $this->session->set_userdata("accountId", $this->input->post('fund_account'));
+            $this->form_validation->set_rules('fund_password', '密码', 'callback_fundAccount_valid');
 
-        /**
-         * 如果输入的资金账户、资金账户密码不合法，则重新加载账户设置界面
-         *     显示资金账户、资金账户密码不合法的提示信息
-         * 如果输入的资金账户、资金账户密码合法，则向数据库之中修改帐号对应的资金账号
-         */
-        if ($this->form_validation->run() == FALSE)
-        {
-            $this->load->view("neon/bind-fund.html");
-        }
-        else
-        {
-            $fund_account = $this->input->post("fund_account");
-            $fund_password = $this->input->post("fund_password");
-            if($this->user_model->bindAccount($this->session->username, $fund_account, $fund_password))
+            /**
+             * 如果输入的资金账户、资金账户密码不合法，则重新加载账户设置界面
+             *     显示资金账户、资金账户密码不合法的提示信息
+             * 如果输入的资金账户、资金账户密码合法，则向数据库之中修改帐号对应的资金账号
+             */
+            if ($this->form_validation->run() == FALSE)
             {
-                // 向数据库添加账号成功，加载成功修改界面
-                $this->load->view('neon/change-success.html');
+                $this->load->view("neon/bind-fund.html");
             }
             else
             {
-                // 向数据库添加账号失败，重新加载账户设置页面
-                $this->load->view("neon/bind-fund.html");
+                $fund_account = $this->input->post("fund_account");
+                $fund_password = $this->input->post("fund_password");
+                if($this->user_model->bindAccount($this->session->username, $fund_account, $fund_password))
+                {
+                    // 向数据库添加账号成功，加载成功修改界面
+                    $this->load->view('neon/change-success.html');
+                }
+                else
+                {
+                    // 向数据库添加账号失败，重新加载账户设置页面
+                    $this->load->view("neon/bind-fund.html");
+                }
             }
+        }
+        else{
+            redirect('login');
         }
 
     }
@@ -335,58 +344,68 @@ class User extends CI_Controller
     // 账户设置页面：解绑资金账号
     public function unbind_fund()
     {
-        if($this->user_model->unBindAccount($this->session->username))
-        {
-        	// 修改数据库中账户对应的资金账户成功，加载成功修改界面
-            $this->load->view('neon/change-success.html');
+        if(isset($this->session->username)){
+            if($this->user_model->unBindAccount($this->session->username))
+            {
+                // 修改数据库中账户对应的资金账户成功，加载成功修改界面
+                $this->load->view('neon/change-success.html');
+            }
+            else
+            {
+                // 修改失败，重新加载账户设置页面
+                $this->load->view('neon/set-info.html');
+            }
         }
-        else
-        {
-            // 修改失败，重新加载账户设置页面
-            $this->load->view('neon/set-info.html');
+        else{
+            redirect('login');
         }
     }
 
     // 查询股票信息界面
     public function query_stock()
     {
-        // 表示是否加载股票信息
-        $data['load_stock'] = false;
+        if(isset($this->session->username)){
+            // 表示是否加载股票信息
+            $data['load_stock'] = false;
 
-        /**
-         * 检查输入的股票代码合法性检查
-         * 股票代码对应的股票不合法：为空、不存在
-         */
-		$this->form_validation->set_rules('stockid', '股票代码', 'callback_stock_check');
+            /**
+             * 检查输入的股票代码合法性检查
+             * 股票代码对应的股票不合法：为空、不存在
+             */
+            $this->form_validation->set_rules('stockid', '股票代码', 'callback_stock_check');
 
-		/**
-         * 如果股票代码不合法，则重新加载查询股票信息界面
-         *     显示股票代码不合法的提示信息
-         * 如果输入的股票代码合法，则向数据库之中查询对应的股票信息
-         */
-        if ($this->form_validation->run() == FALSE)
-        {
-            $this->load->view("neon/query-stock.html",$data);
+            /**
+             * 如果股票代码不合法，则重新加载查询股票信息界面
+             *     显示股票代码不合法的提示信息
+             * 如果输入的股票代码合法，则向数据库之中查询对应的股票信息
+             */
+            if ($this->form_validation->run() == FALSE)
+            {
+                $this->load->view("neon/query-stock.html",$data);
+            }
+            else
+            {
+                // 从view拿到的股票代码
+                $stockid = $this->input->post("stockid");
+
+                // 从数据库拿到股票信息
+                $row = $this->user_model->stockQuery($stockid);
+
+                // 将从数据库得到的股票信息，存入到传送给view的数据，以显示得到的股票信息
+                $change =$row->latestPrice - $row->closingPrice;
+                $chg = $change / $row->closingPrice;
+                $stock = array("stockid"=>$stockid,"change"=>$change,"chg"=>$chg,"latestPrice"=>$row->latestPrice,
+                               "todayTotalVolumn"=>$row->todayTotalVolumn,"latestVolumn"=>$row->latestVolumn,"openingPrice"=>$row->openingPrice,
+                               "closingPrice"=>$row->closingPrice,"latestBuyPrice"=>$row->latestBuyPrice,"latestSellPrice"=>$row->latestSellPrice);
+                $data['load_stock'] = true;
+                $data['stock'] = $stock;
+
+                // 重新加载查询股票信息界面
+                $this->load->view('neon/query-stock.html',$data);
+            }
         }
-        else
-        {
-            // 从view拿到的股票代码
-            $stockid = $this->input->post("stockid");
-
-            // 从数据库拿到股票信息
-            $row = $this->user_model->stockQuery($stockid);
-
-            // 将从数据库得到的股票信息，存入到传送给view的数据，以显示得到的股票信息
-            $change =$row->latestPrice - $row->closingPrice;
-            $chg = $change / $row->closingPrice;
-            $stock = array("stockid"=>$stockid,"change"=>$change,"chg"=>$chg,"latestPrice"=>$row->latestPrice,
-                           "todayTotalVolumn"=>$row->todayTotalVolumn,"latestVolumn"=>$row->latestVolumn,"openingPrice"=>$row->openingPrice,
-                           "closingPrice"=>$row->closingPrice,"latestBuyPrice"=>$row->latestBuyPrice,"latestSellPrice"=>$row->latestSellPrice);
-            $data['load_stock'] = true;
-            $data['stock'] = $stock;
-
-            // 重新加载查询股票信息界面
-            $this->load->view('neon/query-stock.html',$data);
+        else{
+            redirect('login');
         }
     }
 
@@ -421,21 +440,26 @@ class User extends CI_Controller
          * 如果用户已绑定对应的资金账户，则显示资金账户对应的数据
          * 如果未绑定，则显示为空
          */
-        if($this->user_model->hasFundAccount($this->session->username))
-        {
-        	$row = $this->user_model->fundAccountQuery($this->session->username);
+        if(isset($this->session->username)){
+            if($this->user_model->hasFundAccount($this->session->username))
+            {
+                $row = $this->user_model->fundAccountQuery($this->session->username);
 
-        	// 将查询所得的资金账户信息存入到传入给view的数据，以便显示
-        	$fund = array("accountId"=>$row->accountId,"balanceOfAccount"=>$row->balanceOfAccount,
-        		"availableBalance"=>$row->balanceOfAccount-$row->frozenBalance, "frozenBalance"=>$row->frozenBalance);
-       	 	$data['fund'] = $fund;
-        	$this->load->view("neon/query-money.html", $data);
+                // 将查询所得的资金账户信息存入到传入给view的数据，以便显示
+                $fund = array("accountId"=>$row->accountId,"balanceOfAccount"=>$row->balanceOfAccount,
+                    "availableBalance"=>$row->balanceOfAccount-$row->frozenBalance, "frozenBalance"=>$row->frozenBalance);
+                $data['fund'] = $fund;
+                $this->load->view("neon/query-money.html", $data);
+            }
+            else
+            {
+                // 未绑定资金账户，则显示为空，重新加载资金账户信息界面
+                $data['fund'] = 0;
+                $this->load->view("neon/query-money.html", $data);
+            }
         }
-        else
-        {
-        	// 未绑定资金账户，则显示为空，重新加载资金账户信息界面
-        	$data['fund'] = 0;
-        	$this->load->view("neon/query-money.html", $data);
+        else{
+            redirect('login');
         }
     }
 
@@ -447,18 +471,23 @@ class User extends CI_Controller
          * 如果用户已绑定对应的股票账户，则显示股票账户对应的数据
          * 如果未绑定，则显示为空
          */
-        if($this->user_model->hasStockAccount($this->session->username))
-        {
-        	$own_stock = $this->user_model->stockAccountQuery($this->session->username);
-	        // 将查询所得的股票账户信息存入到传入给view的数据，以便显示
-	        $data['own_stock'] = $own_stock;
-	        $this->load->view("neon/query-own-stock.html", $data);
+        if(isset($this->session->username)){
+            if($this->user_model->hasStockAccount($this->session->username))
+            {
+                $own_stock = $this->user_model->stockAccountQuery($this->session->username);
+                // 将查询所得的股票账户信息存入到传入给view的数据，以便显示
+                $data['own_stock'] = $own_stock;
+                $this->load->view("neon/query-own-stock.html", $data);
+            }
+            else
+            {
+                // 未绑定股票账户，则显示为空，重新加载持有股票信息界面
+                $data['own_stock'] = array();
+                $this->load->view("neon/query-own-stock.html", $data);
+            }
         }
-        else
-        {
-        	// 未绑定股票账户，则显示为空，重新加载持有股票信息界面
-        	$data['own_stock'] = array();
-        	$this->load->view("neon/query-own-stock.html", $data);
+        else{
+            redirect('login');
         }
 
     }
@@ -466,39 +495,44 @@ class User extends CI_Controller
     // 购买股票界面
     public function buy()
     {
-        $data['load_buy'] = false;
+        if(isset($this->session->username)){   
+           $data['load_buy'] = false;
 
-        /**
-         * 检查输入的股票代码合法性检查
-         * 股票代码对应的股票不合法：为空、不存在、未绑定资金账户、未绑定股票账户
-         */
-		$this->form_validation->set_rules('buy_stock', '股票代码', 'callback_stockExist_check');
+            /**
+             * 检查输入的股票代码合法性检查
+             * 股票代码对应的股票不合法：为空、不存在、未绑定资金账户、未绑定股票账户
+             */
+            $this->form_validation->set_rules('buy_stock', '股票代码', 'callback_stockExist_check');
 
-        /**
-         * 如果输入的股票代码不合法，则重新加载购买股票界面
-         *     显示股票代码不合法的提示信息
-         * 如果输入的股票代码合法，则显示股票代码对应的购买信息
-         */
-        if ($this->form_validation->run() == FALSE)
-        {
-            $this->load->view("neon/buy.html",$data);
+            /**
+             * 如果输入的股票代码不合法，则重新加载购买股票界面
+             *     显示股票代码不合法的提示信息
+             * 如果输入的股票代码合法，则显示股票代码对应的购买信息
+             */
+            if ($this->form_validation->run() == FALSE)
+            {
+                $this->load->view("neon/buy.html",$data);
+            }
+            else
+            {
+                $data['load_buy'] = true;
+                $stockid = $this->input->post("buy_stock");
+                // 查询股票代码对应的信息
+                $row = $this->user_model->stockQuery($stockid);
+
+                $data['stockid'] = $stockid;
+                $data['recommend_price'] = $row->latestPrice;
+
+                // 可购买的最大数量 = 资金账户中(balanceOfAccount - frozenBalance)/$row->latestPrice
+                $fund = $this->user_model->fundAccountQuery($this->session->username);
+                $data['maximum_quantity'] = floor(($fund->balanceOfAccount - $fund->frozenBalance) / $row->latestPrice);
+
+                // 重新加载购买股票界面
+                $this->load->view("neon/buy.html",$data);
+            }            
         }
-        else
-        {
-            $data['load_buy'] = true;
-            $stockid = $this->input->post("buy_stock");
-            // 查询股票代码对应的信息
-            $row = $this->user_model->stockQuery($stockid);
-
-            $data['stockid'] = $stockid;
-            $data['recommend_price'] = $row->latestPrice;
-
-            // 可购买的最大数量 = 资金账户中(balanceOfAccount - frozenBalance)/$row->latestPrice
-            $fund = $this->user_model->fundAccountQuery($this->session->username);
-            $data['maximum_quantity'] = floor(($fund->balanceOfAccount - $fund->frozenBalance) / $row->latestPrice);
-
-            // 重新加载购买股票界面
-            $this->load->view("neon/buy.html",$data);
+        else{
+            redirect('login');
         }
     }
 
@@ -527,10 +561,11 @@ class User extends CI_Controller
         }
         else
         {
-        	$url = '/instruction'; // 由第四组决定
+        	$url = 'http://123.206.109.122:3000/instruction'; // 由第四组决定
+            //$url = "";
 			$jsonStr = json_encode(array(
 				'account' => $this->session->accountId,
-				'buyOrSell' => 'buy',
+				'buyOrSell' => 0,
 				'stock' => $stockid,
 				'price' => $buy_price,
 				'quantity' => $buy_quantity
@@ -564,36 +599,41 @@ class User extends CI_Controller
     // 出售股票界面
     public function sell()
     {
-        $data['load_sell'] = false;
+        if(isset($this->session->username)){
+            $data['load_sell'] = false;
 
-		/**
-         * 检查输入的股票代码合法性检查
-         * 股票代码对应的股票不合法：为空、不存在、未绑定资金账户、未绑定股票账户
-         */
-		$this->form_validation->set_rules('sell_stock', '股票代码', 'callback_stockExist_check');
+            /**
+             * 检查输入的股票代码合法性检查
+             * 股票代码对应的股票不合法：为空、不存在、未绑定资金账户、未绑定股票账户
+             */
+            $this->form_validation->set_rules('sell_stock', '股票代码', 'callback_stockExist_check');
 
-        /**
-         * 如果输入的股票代码不合法，则重新加载出售股票界面
-         *     显示股票代码不合法的提示信息
-         * 如果输入的股票代码合法，则显示股票代码对应的出售信息
-         */
-        if ($this->form_validation->run() == FALSE)
-        {
-            $this->load->view("neon/sell.html",$data);
+            /**
+             * 如果输入的股票代码不合法，则重新加载出售股票界面
+             *     显示股票代码不合法的提示信息
+             * 如果输入的股票代码合法，则显示股票代码对应的出售信息
+             */
+            if ($this->form_validation->run() == FALSE)
+            {
+                $this->load->view("neon/sell.html",$data);
+            }
+            else
+            {
+                $data['load_sell'] = true;
+                $stockid = $this->input->post("sell_stock");
+
+                $row = $this->user_model->stockQuery($stockid);
+
+                $data['stockid'] = $stockid;
+                $data['recommend_price'] = $row->latestPrice;
+
+                // 可出售的最大数量（用户持有的该股票的股数：stockHold表）
+                $data['maximum_quantity'] = $this->user_model->quantityOfStockSell($this->session->username, $stockid);
+                $this->load->view("neon/sell.html",$data);
+            }
         }
-        else
-        {
-            $data['load_sell'] = true;
-            $stockid = $this->input->post("sell_stock");
-
-            $row = $this->user_model->stockQuery($stockid);
-
-            $data['stockid'] = $stockid;
-            $data['recommend_price'] = $row->latestPrice;
-
-            // 可出售的最大数量（用户持有的该股票的股数：stockHold表）
-            $data['maximum_quantity'] = $this->user_model->quantityOfStockSell($this->session->username, $stockid);
-            $this->load->view("neon/sell.html",$data);
+        else{
+            redirect('login');
         }
     }
 
@@ -622,10 +662,10 @@ class User extends CI_Controller
         }
         else
         {
-        	$url = '/destroy'; // 由第四组决定
+        	$url = 'http://123.206.109.122:3000/instruction'; // 由第四组决定
 			$jsonStr = json_encode(array(
 				'account' => $this->session->accountId,
-				'buyOrSell' => 'sell',
+				'buyOrSell' => 1,
 				'stock' => $stockid,
 				'price' => $sell_price,
 				'quantity' => $sell_quantity
@@ -663,18 +703,23 @@ class User extends CI_Controller
         /**
          * 如果已绑定应股票账户，未绑定股票账户则显示为空
          */
-        if ($this->user_model->hasStockAccount($this->session->username))
-        {
-        	$instruction = $this->user_model->instructionQuery($this->session->username);
-        }
-        else
-        {
-        	$instruction = array();
-        }
-        $data['instruction'] = $instruction;
+        if(isset($this->session->username)){
+            if ($this->user_model->hasStockAccount($this->session->username))
+            {
+                $instruction = $this->user_model->instructionQuery($this->session->username);
+            }
+            else
+            {
+                $instruction = array();
+            }
+            $data['instruction'] = $instruction;
 
-        // 加载买卖记录界面
-        $this->load->view("neon/query-instruction.html", $data);
+            // 加载买卖记录界面
+            $this->load->view("neon/query-instruction.html", $data);
+        }
+        else{
+            redirect('login');
+        }
     }
     
     public function cancel()
@@ -682,7 +727,7 @@ class User extends CI_Controller
         $instrID = $this->input->post("id");
         echo $instrID;
         
-        $url = '/destroy'; // 由第四组决定
+        $url = 'http://123.206.109.122:3000/destroy'; // 由第四组决定
 		$jsonStr = json_encode(array('id' => $instrID));
 		
 		$ch = curl_init();  
