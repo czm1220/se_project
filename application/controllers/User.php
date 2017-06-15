@@ -554,13 +554,16 @@ class User extends CI_Controller
         $buy_password = $this->input->post("buy_password");
 
     	// 读取资金账户的密码并判断与$buy_password是否一致
-        if ($this->form_validation->run() == FALSE || $buy_quantity <= 0)
+        if ($this->form_validation->run() == FALSE)
         {
-        	// 不一致则操作失败界面
-        	$this->load->view("neon/change-fail.html");
+        	$data['error'] = "交易密码错误！";
+        	$this->load->view("neon/change-fail.html",$data);
         }
-        else
-        {
+        else if($buy_quantity <= 0){
+            $data['error'] = "交易量不能为0！";
+        	$this->load->view("neon/change-fail.html",$data);
+        }
+        else{
         	//给中央交易系统发送购买股票指令
             $url = 'http://123.206.109.122:3000/instruction'; // 由第四组决定
 
@@ -586,13 +589,14 @@ class User extends CI_Controller
 			ob_end_clean();  
 			$return_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 			
-			echo $return_content.'</br>';
-			echo $return_code; // 0:失败, 200~209:成功
+			//echo $return_content.'</br>';
+			//echo $return_code; // 0:失败, 200~209:成功
  
             if($return_code){
                 $this->load->view("neon/change-success.html");
             }else{
-                $this->load->view("neon/change-fail.html");
+                $data['error'] = "中央交易系统处理错误！";
+                $this->load->view("neon/change-fail.html",$data);
             }
         }
     }
@@ -656,10 +660,14 @@ class User extends CI_Controller
         $sell_password = $this->input->post("sell_password");
 
         // 读取资金账户的密码并判断与$sell_password是否一致
-        if ($this->form_validation->run() == FALSE || $sell_quantity <= 0)
+        if ($this->form_validation->run() == FALSE)
         {
-        	// 不一致则操作失败界面
-        	$this->load->view("neon/change-fail.html");
+        	$data['error'] = "交易密码错误！";
+        	$this->load->view("neon/change-fail.html",$data);
+        }
+        else if($buy_quantity <= 0){
+            $data['error'] = "交易量不能为0！";
+        	$this->load->view("neon/change-fail.html",$data);
         }
         else
         {
@@ -687,13 +695,14 @@ class User extends CI_Controller
 			ob_end_clean();  
 			$return_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 			
-			echo $return_content.'</br>';
-			echo $return_code; // 0:失败, 200~209:成功
+			//echo $return_content.'</br>';
+			//echo $return_code; // 0:失败, 200~209:成功
             // 一致则加载操作成功界面
             if($return_code){
                 $this->load->view("neon/change-success.html");
             }else{
-                $this->load->view("neon/change-fail.html");
+                $data['error'] = "中央交易系统处理错误！";
+                $this->load->view("neon/change-fail.html",$data);
             }
         	
         }
@@ -747,14 +756,15 @@ class User extends CI_Controller
 		ob_end_clean();  
 		$return_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 		
-		echo $return_content.'</br>';
-		echo $return_code; // 0:失败, 200~209:成功
+		//echo $return_content.'</br>';
+		//echo $return_code; // 0:失败, 200~209:成功
         
         if($return_code){
             $this->load->view("neon/change-success.html");
         }
         else{
-            $this->load->view("neon/change-fail.html");
+            $data['error'] = "中央交易系统处理错误！";
+            $this->load->view("neon/change-fail.html",$data);
         }
     }
 
