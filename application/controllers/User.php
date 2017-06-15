@@ -222,7 +222,7 @@ class User extends CI_Controller
             }
         }
         else{
-            redirect('login');
+            redirect('user/login');
         }
     }
 
@@ -287,7 +287,7 @@ class User extends CI_Controller
             }
         }
         else{
-            redirect('login');
+            redirect('user/login');
         }
 
     }
@@ -357,7 +357,7 @@ class User extends CI_Controller
             }
         }
         else{
-            redirect('login');
+            redirect('user/login');
         }
     }
 
@@ -405,7 +405,7 @@ class User extends CI_Controller
             }
         }
         else{
-            redirect('login');
+            redirect('user/login');
         }
     }
 
@@ -459,7 +459,7 @@ class User extends CI_Controller
             }
         }
         else{
-            redirect('login');
+            redirect('user/login');
         }
     }
 
@@ -487,7 +487,7 @@ class User extends CI_Controller
             }
         }
         else{
-            redirect('login');
+            redirect('user/login');
         }
 
     }
@@ -532,7 +532,7 @@ class User extends CI_Controller
             }            
         }
         else{
-            redirect('login');
+            redirect('user/login');
         }
     }
 
@@ -638,7 +638,7 @@ class User extends CI_Controller
             }
         }
         else{
-            redirect('login');
+            redirect('user/login');
         }
     }
 
@@ -729,7 +729,7 @@ class User extends CI_Controller
             $this->load->view("neon/query-instruction.html", $data);
         }
         else{
-            redirect('login');
+            redirect('user/login');
         }
     }
     
