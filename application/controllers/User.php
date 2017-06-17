@@ -394,7 +394,7 @@ class User extends CI_Controller
                 // 将从数据库得到的股票信息，存入到传送给view的数据，以显示得到的股票信息
                 $change =$row->latestPrice - $row->closingPrice;
                 $chg = $change / $row->closingPrice;
-                $stock = array("stockid"=>$stockid,"change"=>$change,"chg"=>$chg,"latestPrice"=>$row->latestPrice,
+                $stock = array("stockid"=>$stockid,"change"=>(number_format($change, 4)*100).'%',"chg"=>(number_format($chg,4)*100).'%',"latestPrice"=>$row->latestPrice,
                                "todayTotalVolumn"=>$row->todayTotalVolumn,"latestVolumn"=>$row->latestVolumn,"openingPrice"=>$row->openingPrice,
                                "closingPrice"=>$row->closingPrice,"latestBuyPrice"=>$row->latestBuyPrice,"latestSellPrice"=>$row->latestSellPrice);
                 $data['load_stock'] = true;
@@ -776,18 +776,8 @@ class User extends CI_Controller
      * 买卖股票时，确认股票存在
      */
     public function stockExist_check($str)
-    {
-    	if (strlen($str) == 0)
-        {
-            $this->form_validation->set_message('stockExist_check', '股票代码不能为空');
-            return FALSE;
-        }
-    	else if (!$this->user_model->stockExist($str))
-    	{
-    		$this->form_validation->set_message('stockExist_check', '股票不存在');
-    		return FALSE;
-    	}
-    	else if (!$this->user_model->hasFundAccount($this->session->username))
+    {    	
+    	if (!$this->user_model->hasFundAccount($this->session->username))
     	{
     		$this->form_validation->set_message('stockExist_check', '未绑定资金账户');
     		return FALSE;
@@ -797,8 +787,27 @@ class User extends CI_Controller
     		$this->form_validation->set_message('stockExist_check', '未绑定股票账户');
     		return FALSE;
     	}
-    	else
+    	else if (strlen($str) == 0)
+        {
+            $this->form_validation->set_message('stockExist_check', '股票代码不能为空');
+            return FALSE;
+        }
+    	else if (!$this->user_model->stockExist($str))
+    	{
+    		$this->form_validation->set_message('stockExist_check', '股票不存在');
+    		return FALSE;
+    	}
+        else{
+            $row = $this->user_model->stockQuery($str);
+            if($row->state == 1){
+                $this->form_validation->set_message('stockExist_check', '该股票已涨停，不可进行交易');
+                return FALSE;
+            }else if($row->state == 2){
+                $this->form_validation->set_message('stockExist_check', '该股票已跌停，不可进行交易');
+                return FALSE;
+            }else
     		return TRUE;
+        }
     }
 
     /**
