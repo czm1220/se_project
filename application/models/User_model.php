@@ -351,4 +351,22 @@ class User_model extends CI_Model
         }
     }
 
+    /**
+     * @param $username
+     * @return 根据用户名查询绑定的股票账户
+     *
+     * 查询持有股票数量
+     */
+    public function getAccountId($username)
+    {
+        // 查询用户名对应的资金账户帐号
+        $sql = "SELECT * FROM LoginUser WHERE user = ?";
+        $row1 =  $this->db->query($sql, array($username))->row();
+
+        // 查询资金账户对应的股票账户
+        $sql = "SELECT * FROM PerFundAccount WHERE accountId = ?";
+        $query = $this->db->query($sql, array($row1->account))->row();
+        return $query->stockAccountId;
+    }
+
 }

@@ -136,7 +136,6 @@ class User extends CI_Controller
             return FALSE;
         }
         if(!preg_match('/^[a-zA-Z][a-zA-Z0-9_]*$/', $str)){
-            echo "***";
             $this->form_validation->set_message('username_check', '用户名应该由字母开头，并由字母、数字和下划线组成');
             return FALSE;
         }
@@ -568,7 +567,7 @@ class User extends CI_Controller
             $url = 'http://123.206.109.122:8080/instruction'; // 由第四组决定
 
 			$jsonStr = json_encode(array(
-				'account' => $this->session->accountId,
+				'account' => $this->user_model->getAccountId($this->session->username),
 				'buyOrSell' => 0,
 				'stock' => $stockid,
 				'price' => $buy_price,
@@ -588,9 +587,6 @@ class User extends CI_Controller
 			$return_content = ob_get_contents();  
 			ob_end_clean();  
 			$return_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-			
-			//echo $return_content.'</br>';
-			//echo $return_code; // 0:失败, 200~209:成功
  
             if($return_code){
                 $this->load->view("neon/change-success.html");
@@ -665,7 +661,7 @@ class User extends CI_Controller
         	$data['error'] = "交易密码错误！";
         	$this->load->view("neon/change-fail.html",$data);
         }
-        else if($buy_quantity <= 0){
+        else if($sell_quantity <= 0){
             $data['error'] = "交易量不能为0！";
         	$this->load->view("neon/change-fail.html",$data);
         }
@@ -674,7 +670,8 @@ class User extends CI_Controller
         	//给中央交易系统发送出售股票指令
             $url = 'http://123.206.109.122:8080/instruction'; // 由第四组决定
 			$jsonStr = json_encode(array(
-				'account' => $this->session->accountId,
+				// 'account' => $this->session->accountId,
+                'account' => $this->user_model->getAccountId($this->session->username),
 				'buyOrSell' => 1,
 				'stock' => $stockid,
 				'price' => $sell_price,
@@ -695,8 +692,6 @@ class User extends CI_Controller
 			ob_end_clean();  
 			$return_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 			
-			//echo $return_content.'</br>';
-			//echo $return_code; // 0:失败, 200~209:成功
             // 一致则加载操作成功界面
             if($return_code){
                 $this->load->view("neon/change-success.html");
@@ -737,7 +732,6 @@ class User extends CI_Controller
     {
         //给中央交易系统发送撤销指令
         $instrID = $this->input->post("id");
-        echo $instrID;
         
         $url = 'http://123.206.109.122:8080/destroy'; // 由第四组决定
 		$jsonStr = json_encode(array('id' => $instrID));
@@ -755,9 +749,6 @@ class User extends CI_Controller
 		$return_content = ob_get_contents();  
 		ob_end_clean();  
 		$return_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-		
-		//echo $return_content.'</br>';
-		//echo $return_code; // 0:失败, 200~209:成功
         
         if($return_code){
             $this->load->view("neon/change-success.html");
