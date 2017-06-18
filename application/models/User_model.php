@@ -87,8 +87,9 @@ class User_model extends CI_Model
     public function changePasswd($username,$oldPasswd,$newPasswd)
     {
         $sql = "UPDATE LoginUser SET password = ? WHERE user = ?";
-        $password_crypted = crypt($newPasswd, $this->salt);
-        return $this->db->query($sql,array($password_crypted,$username));
+        // $password_crypted = crypt($newPasswd, $this->salt);
+        // return $this->db->query($sql,array($password_crypted,$username));
+		return $this->db->query($sql,array($newPasswd,$username));
     }
 
     /**
@@ -113,8 +114,9 @@ class User_model extends CI_Model
     public function validateFundAccount($account, $password)
     {
     	$sql = "SELECT * FROM PerFundAccount WHERE accountId = ? AND accPassword = ?";
-        $password_crypted = crypt($password, $this->salt);
-        return $this->db->query($sql, array($account, $password_crypted))->num_rows() > 0;
+        // $password_crypted = crypt($password, $this->salt);
+        // return $this->db->query($sql, array($account, $password_crypted))->num_rows() > 0;
+		return $this->db->query($sql, array($account, $password))->num_rows() > 0;
     }
 
     /**
